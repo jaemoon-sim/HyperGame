@@ -1,6 +1,7 @@
 package engine
 
 import (
+	"encoding/json"
 	"fmt"
 )
 
@@ -35,10 +36,19 @@ func (g *Game) Play() {
 
 			diceSet := NewDiceSet()
 			for trial := 1; trial <= 3; trial++ {
-				if next := player.Play(trial, diceSet); !next {
+				diceSet.Roll()
+
+				state := createState(g, round, trial, player, diceSet)
+				b, _ := json.MarshalIndent(state, "", " ")
+				fmt.Printf("%s\n", b)
+				if next := player.Play(state, diceSet); !next {
 					break
 				}
 			}
 		}
 	}
+
+	fmt.Printf("FINISHED !!! 🎉\n")
+	b, _ := json.MarshalIndent(g, "", " ")
+	fmt.Printf("%s\n", b)
 }

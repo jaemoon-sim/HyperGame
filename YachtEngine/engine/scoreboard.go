@@ -5,57 +5,95 @@ import (
 	"strings"
 )
 
+var ErrDuplicatedScore = fmt.Errorf("duplicated score")
+
 type ScoreBoard struct {
-	Ones          *int `json:"ones"`
-	Twos          *int `json:"twos"`
+	Ones          *int `json:"aces"`
+	Twos          *int `json:"deuces"`
 	Threes        *int `json:"threes"`
 	Fours         *int `json:"fours"`
 	Fives         *int `json:"fives"`
-	Sixs          *int `json:"sixs"`
-	Choice        *int `json:"choice'`
-	FourOfAKind   *int `json:"four_of_a_kind"`
-	FullHouse     *int `json:"full_house`
-	SmallStraight *int `json:"small_straight"`
-	LargeStraight *int `json:"large_straight"`
+	Sixs          *int `json:"sixes"`
+	Choice        *int `json:"choice"`
+	FourOfAKind   *int `json:"fourKind"`
+	FullHouse     *int `json:"fullHouse"`
+	SmallStraight *int `json:"smallStraight"`
+	LargeStraight *int `json:"largeStraight"`
 	Yacht         *int `json:"yacht"`
 }
 
 func (s *ScoreBoard) SetScore(name string, dices *DiceSet) error {
 	switch name {
-	case "ones":
+	case "aces":
+		if s.Ones != nil {
+			return ErrDuplicatedScore
+		}
 		s.Ones = s.calculateOnes(dices)
 		return nil
-	case "twos":
+	case "deuces":
+		if s.Twos != nil {
+			return ErrDuplicatedScore
+		}
 		s.Twos = s.calculateTwos(dices)
 		return nil
 	case "threes":
+		if s.Threes != nil {
+			return ErrDuplicatedScore
+		}
 		s.Threes = s.calculateThrees(dices)
 		return nil
 	case "fours":
+		if s.Fours != nil {
+			return ErrDuplicatedScore
+		}
 		s.Fours = s.calculateFours(dices)
 		return nil
 	case "fives":
+		if s.Fives != nil {
+			return ErrDuplicatedScore
+		}
 		s.Fives = s.calculateFives(dices)
 		return nil
-	case "sixs":
+	case "sixes":
+		if s.Sixs != nil {
+			return ErrDuplicatedScore
+		}
 		s.Sixs = s.calculateSixs(dices)
 		return nil
 	case "choice":
+		if s.Choice != nil {
+			return ErrDuplicatedScore
+		}
 		s.Choice = s.calculateChoice(dices)
 		return nil
-	case "four_of_a_kind":
+	case "fourKind":
+		if s.FourOfAKind != nil {
+			return ErrDuplicatedScore
+		}
 		s.FourOfAKind = s.calculateFourOfAKind(dices)
 		return nil
-	case "full_house":
+	case "fullHouse":
+		if s.FullHouse != nil {
+			return ErrDuplicatedScore
+		}
 		s.FullHouse = s.calculateFullHouse(dices)
 		return nil
-	case "small_straight":
+	case "smallStraight":
+		if s.SmallStraight != nil {
+			return ErrDuplicatedScore
+		}
 		s.SmallStraight = s.calculateSmallStraight(dices)
 		return nil
-	case "large_straight":
+	case "largeStraight":
+		if s.LargeStraight != nil {
+			return ErrDuplicatedScore
+		}
 		s.LargeStraight = s.calculateLargeStraight(dices)
 		return nil
 	case "yacht":
+		if s.Yacht != nil {
+			return ErrDuplicatedScore
+		}
 		s.Yacht = s.calculateYacht(dices)
 		return nil
 	default:

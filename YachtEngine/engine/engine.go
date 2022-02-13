@@ -5,7 +5,7 @@ import "fmt"
 type GameConfig struct {
 	NumPlayers int `json:"num_players"`
 
-	AlgorithmPaths []string `json:"algorithm_paths"`
+	AlgorithmPorts []int `json:"algorithm_ports"`
 }
 
 func InitGame(gameConfig GameConfig) *Game {
@@ -14,7 +14,7 @@ func InitGame(gameConfig GameConfig) *Game {
 		p := &Player{
 			ID:            fmt.Sprintf("%d", i),
 			ScoreBoard:    &ScoreBoard{},
-			AlgorithmPath: gameConfig.AlgorithmPaths[i],
+			AlgorithmPort: gameConfig.AlgorithmPorts[i],
 		}
 		gf = gf.withPlayer(p)
 	}

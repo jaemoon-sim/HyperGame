@@ -34,11 +34,15 @@ func (ds *DiceSet) String() string {
 	return buf.String()
 }
 
+func (ds *DiceSet) ToInts() [5]int {
+	return [5]int{ds[0].Value, ds[1].Value, ds[2].Value, ds[3].Value, ds[4].Value}
+}
+
 func (ds *DiceSet) Roll() {
-	for _, dice := range ds {
+	for i, dice := range ds {
 		if dice.Kept {
 			continue
 		}
-		dice.Value = rand.Intn(6) + 1
+		ds[i].Value = rand.Intn(6) + 1
 	}
 }

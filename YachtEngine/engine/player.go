@@ -1,47 +1,78 @@
 package engine
 
-import "log"
+import (
+	"bytes"
+	"encoding/json"
+	"fmt"
+	"io/ioutil"
+	"log"
+	"net/http"
+)
 
 type Player struct {
 	ID          string `json:"id"`
 	*ScoreBoard `json:"scoreboard"`
 
-	AlgorithmPath string `json:"-"`
+	AlgorithmPort int `json:"-"`
 }
 
 type Decision struct {
-	Keep       []int  `json:"keep"`
-	ScoreTitle string `json:"score_title"`
+	InnerDecision struct {
+		Keep       []int   `json:"keep"`
+		ScoreTitle *string `json:"choice"`
+	} `json:"decision"`
 }
 
-func contains(intSlice []int, num int) bool {
-	for _, i := range intSlice {
-		if i == num {
-			return true
-		}
+func (d Decision) String() string {
+	b, _ := json.MarshalIndent(d, "", " ")
+	return string(b)
+}
+
+func (d Decision) keepDices(diceSet *DiceSet) {
+	for _, k := range d.InnerDecision.Keep {
+		diceSet[k].Kept = true
 	}
-	return false
 }
 
-func (p *Player) Play(trial int, diceSet *DiceSet) (nextTrial bool) {
-	decision := p.GetDecision(diceSet)
-	if decision.ScoreTitle != "" {
-		err := p.ScoreBoard.SetScore(decision.ScoreTitle, diceSet)
+func (p *Player) Play(state *State, diceSet *DiceSet) (nextTrial bool) {
+	decision := p.GetDecision(state)
+	fmt.Printf("%s\n", decision.String())
+	if decision.InnerDecision.ScoreTitle != nil {
+		decision.keepDices(diceSet)
+		err := p.ScoreBoard.SetScore(*decision.InnerDecision.ScoreTitle, diceSet)
 		if err != nil {
-			log.Fatalf("player(%s) invalid score title %s: %v\n", p.ID, decision.ScoreTitle, err)
+			log.Fatalf("player(%s) invalid score title %s: %v\n", p.ID, *decision.InnerDecision.ScoreTitle, err)
 		}
 		return false
 	}
 
-	for i := range diceSet {
-		diceSet[i].Kept = contains(decision.Keep, i)
-	}
 	return true
 }
 
 func TODO() {}
 
-func (p *Player) GetDecision(diceSet *DiceSet) Decision {
-	TODO()
-	return Decision{}
+func (p *Player) GetDecision(state *State) Decision {
+	b, err := json.Marshal(state)
+	if err != nil {
+		log.Fatalf("failed to marshal state")
+	}
+	reqBody := bytes.NewReader(b)
+	resp, err := http.Post(fmt.Sprintf("http://localhost:%d/decide", p.AlgorithmPort), "application/json", reqBody)
+	if err != nil {
+		log.Fatalf("failed to request to player(%s): %v", p.ID, err)
+	}
+
+	defer resp.Body.Close()
+
+	// Response 체크.
+	respBody, err := ioutil.ReadAll(resp.Body)
+	if err != nil {
+		log.Fatalf("failed to get response from player(%s): %v", p.ID, err)
+	}
+
+	decision := Decision{}
+	if err := json.Unmarshal(respBody, &decision); err != nil {
+		log.Fatalf("failed to parse response from player(%s): %v", p.ID, err)
+	}
+	return decision
 }
