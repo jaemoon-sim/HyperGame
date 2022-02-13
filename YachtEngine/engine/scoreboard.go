@@ -267,3 +267,93 @@ func (s *ScoreBoard) calculateYacht(dices *DiceSet) *int {
 	}
 	return &score
 }
+
+type ScoreBoardResult struct {
+	Ones          *int `json:"aces"`
+	Twos          *int `json:"deuces"`
+	Threes        *int `json:"threes"`
+	Fours         *int `json:"fours"`
+	Fives         *int `json:"fives"`
+	Sixs          *int `json:"sixes"`
+	SubTotal      *int `json:"subtotal"`
+	Choice        *int `json:"choice"`
+	FourOfAKind   *int `json:"fourKind"`
+	FullHouse     *int `json:"fullHouse"`
+	SmallStraight *int `json:"smallStraight"`
+	LargeStraight *int `json:"largeStraight"`
+	Yacht         *int `json:"yacht"`
+	Total         *int `json:"total"`
+}
+
+func (s *ScoreBoard) calculateSubTotal() int {
+	result := 0
+	if s.Ones != nil {
+		result += *s.Ones
+	}
+	if s.Twos != nil {
+		result += *s.Twos
+	}
+	if s.Threes != nil {
+		result += *s.Threes
+	}
+	if s.Fours != nil {
+		result += *s.Fours
+	}
+	if s.Fives != nil {
+		result += *s.Fives
+	}
+	if s.Sixs != nil {
+		result += *s.Sixs
+	}
+
+	if result >= 63 {
+		result += 35
+	}
+	return result
+}
+
+func (s *ScoreBoard) calculateTotal() int {
+	result := s.calculateSubTotal()
+	if s.Choice != nil {
+		result += *s.Choice
+	}
+	if s.FourOfAKind != nil {
+		result += *s.FourOfAKind
+	}
+	if s.FullHouse != nil {
+		result += *s.FullHouse
+	}
+	if s.SmallStraight != nil {
+		result += *s.SmallStraight
+	}
+	if s.LargeStraight != nil {
+		result += *s.LargeStraight
+	}
+	if s.Yacht != nil {
+		result += *s.Yacht
+	}
+	return result
+}
+
+func (s *ScoreBoard) ToScoreBoardResult() ScoreBoardResult {
+	subTotal := s.calculateSubTotal()
+	total := s.calculateTotal()
+
+	return ScoreBoardResult{
+		Ones:     s.Ones,
+		Twos:     s.Twos,
+		Threes:   s.Threes,
+		Fours:    s.Fours,
+		Fives:    s.Fives,
+		Sixs:     s.Sixs,
+		SubTotal: &subTotal,
+
+		Choice:        s.Choice,
+		FourOfAKind:   s.FourOfAKind,
+		FullHouse:     s.FullHouse,
+		SmallStraight: s.SmallStraight,
+		LargeStraight: s.LargeStraight,
+		Yacht:         s.Yacht,
+		Total:         &total,
+	}
+}

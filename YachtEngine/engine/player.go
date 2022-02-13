@@ -50,8 +50,6 @@ func (p *Player) Play(state *State, diceSet *DiceSet) (decision Decision, nextTr
 	return decision, true
 }
 
-func TODO() {}
-
 func (p *Player) GetDecision(state *State) Decision {
 	b, err := json.Marshal(state)
 	if err != nil {
