@@ -1,22 +1,48 @@
 package engine
 
-import "fmt"
+import (
+	"fmt"
+	"strconv"
+	"strings"
+)
+
+type PlayerArg struct {
+	Name string
+	Port int
+}
+
+func (pa *PlayerArg) String() string {
+	return fmt.Sprintf("(%s) :%d", pa.Name, pa.Port)
+}
+func (pa *PlayerArg) Set(arg string) error {
+	splitted := strings.Split(arg, ",")
+	if len(splitted) != 2 {
+		return fmt.Errorf("invalid format of player(%s). should be {name},{port} (e.g., jmsim,9099)", arg)
+	}
+
+	port, err := strconv.Atoi(splitted[1])
+	if err != nil {
+		return err
+	}
+
+	pa.Name = splitted[0]
+	pa.Port = port
+	return nil
+}
 
 type GameConfig struct {
-	NumPlayers int `json:"num_players"`
+	PlayerArgs []PlayerArg
 
-	AlgorithmPorts []int `json:"algorithm_ports"`
-
-	OutputPath string `json:"output_path"`
+	OutputPath string
 }
 
 func InitGame(gameConfig GameConfig) *Game {
 	gf := initGameFactory()
-	for i := 0; i < gameConfig.NumPlayers; i++ {
+	for _, pa := range gameConfig.PlayerArgs {
 		p := &Player{
-			ID:            fmt.Sprintf("%d", i),
+			ID:            pa.Name,
 			ScoreBoard:    &ScoreBoard{},
-			AlgorithmPort: gameConfig.AlgorithmPorts[i],
+			AlgorithmPort: pa.Port,
 		}
 		gf = gf.withPlayer(p)
 	}
