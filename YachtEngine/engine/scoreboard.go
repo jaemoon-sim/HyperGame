@@ -103,9 +103,9 @@ func (s *ScoreBoard) SetScore(name string, dices *DiceSet) error {
 
 func (s *ScoreBoard) calculateOnes(dices *DiceSet) *int {
 	score := 0
-	for d := range dices {
-		if d == 1 {
-			score += d
+	for _, d := range dices {
+		if d.Value == 1 {
+			score += d.Value
 		}
 	}
 	return &score
@@ -113,9 +113,9 @@ func (s *ScoreBoard) calculateOnes(dices *DiceSet) *int {
 
 func (s *ScoreBoard) calculateTwos(dices *DiceSet) *int {
 	score := 0
-	for d := range dices {
-		if d == 2 {
-			score += d
+	for _, d := range dices {
+		if d.Value == 2 {
+			score += d.Value
 		}
 	}
 	return &score
@@ -123,9 +123,9 @@ func (s *ScoreBoard) calculateTwos(dices *DiceSet) *int {
 
 func (s *ScoreBoard) calculateThrees(dices *DiceSet) *int {
 	score := 0
-	for d := range dices {
-		if d == 3 {
-			score += d
+	for _, d := range dices {
+		if d.Value == 3 {
+			score += d.Value
 		}
 	}
 	return &score
@@ -133,9 +133,9 @@ func (s *ScoreBoard) calculateThrees(dices *DiceSet) *int {
 
 func (s *ScoreBoard) calculateFours(dices *DiceSet) *int {
 	score := 0
-	for d := range dices {
-		if d == 4 {
-			score += d
+	for _, d := range dices {
+		if d.Value == 4 {
+			score += d.Value
 		}
 	}
 	return &score
@@ -143,9 +143,9 @@ func (s *ScoreBoard) calculateFours(dices *DiceSet) *int {
 
 func (s *ScoreBoard) calculateFives(dices *DiceSet) *int {
 	score := 0
-	for d := range dices {
-		if d == 5 {
-			score += d
+	for _, d := range dices {
+		if d.Value == 5 {
+			score += d.Value
 		}
 	}
 	return &score
@@ -153,9 +153,9 @@ func (s *ScoreBoard) calculateFives(dices *DiceSet) *int {
 
 func (s *ScoreBoard) calculateSixs(dices *DiceSet) *int {
 	score := 0
-	for d := range dices {
-		if d == 6 {
-			score += d
+	for _, d := range dices {
+		if d.Value == 6 {
+			score += d.Value
 		}
 	}
 	return &score
@@ -163,8 +163,8 @@ func (s *ScoreBoard) calculateSixs(dices *DiceSet) *int {
 
 func (s *ScoreBoard) calculateChoice(dices *DiceSet) *int {
 	score := 0
-	for d := range dices {
-		score += d
+	for _, d := range dices {
+		score += d.Value
 	}
 	return &score
 }

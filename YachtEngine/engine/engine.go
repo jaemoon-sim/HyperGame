@@ -6,6 +6,8 @@ type GameConfig struct {
 	NumPlayers int `json:"num_players"`
 
 	AlgorithmPorts []int `json:"algorithm_ports"`
+
+	OutputPath string `json:"output_path"`
 }
 
 func InitGame(gameConfig GameConfig) *Game {
@@ -18,6 +20,6 @@ func InitGame(gameConfig GameConfig) *Game {
 		}
 		gf = gf.withPlayer(p)
 	}
-
+	gf = gf.withOutputPath(gameConfig.OutputPath)
 	return gf.build()
 }

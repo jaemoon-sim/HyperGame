@@ -35,6 +35,9 @@ func (ds *DiceSet) String() string {
 }
 
 func (ds *DiceSet) ToInts() [5]int {
+	if ds == nil {
+		return [5]int{}
+	}
 	return [5]int{ds[0].Value, ds[1].Value, ds[2].Value, ds[3].Value, ds[4].Value}
 }
 

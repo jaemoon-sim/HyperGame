@@ -3,10 +3,14 @@ package engine
 import (
 	"encoding/json"
 	"fmt"
+	"log"
+	"os"
 )
 
 type GameFactory struct {
 	Players []*Player
+
+	OutputPath string
 }
 
 func initGameFactory() *GameFactory {
@@ -18,37 +22,61 @@ func (gf *GameFactory) withPlayer(p *Player) *GameFactory {
 	return gf
 }
 
+func (gf *GameFactory) withOutputPath(path string) *GameFactory {
+	gf.OutputPath = path
+	return gf
+}
+
 func (gf *GameFactory) build() *Game {
 	return &Game{
-		Players: gf.Players,
+		Players:    gf.Players,
+		OutputPath: gf.OutputPath,
 	}
 }
 
 type Game struct {
 	Players []*Player `json:"players"`
+
+	OutputPath string `json:"output_path"`
 }
 
 func (g *Game) Play() {
-	for round := 1; round <= 12; round++ {
-		fmt.Printf("###### round %d #######\n", round)
-		for _, player := range g.Players {
-			fmt.Printf("   ### player %s\n", player.ID)
+	logState := &LogState{}
 
+	for round := 1; round <= 12; round++ {
+		for _, player := range g.Players {
 			diceSet := NewDiceSet()
 			for trial := 1; trial <= 3; trial++ {
 				diceSet.Roll()
-
 				state := createState(g, round, trial, player, diceSet)
-				b, _ := json.MarshalIndent(state, "", " ")
-				fmt.Printf("%s\n", b)
-				if next := player.Play(state, diceSet); !next {
+
+				decision, next := player.Play(state, diceSet)
+
+				logState.Log = append(logState.Log, LogStateElem{*state.InnerState, decision.InnerDecision})
+				if !next {
 					break
 				}
 			}
 		}
 	}
 
-	fmt.Printf("FINISHED !!! 🎉\n")
-	b, _ := json.MarshalIndent(g, "", " ")
-	fmt.Printf("%s\n", b)
+	logState.Result = *createState(g, 0, 0, nil, nil).InnerState
+
+	g.PrintLog(logState)
+}
+
+func (g *Game) PrintLog(logState *LogState) {
+	b, _ := json.MarshalIndent(logState, "", " ")
+
+	if g.OutputPath == "" {
+		fmt.Printf("%s\n", b)
+	} else {
+		f, err := os.Create(g.OutputPath)
+		if err != nil {
+			log.Fatalf("failed to create file(%s): %v", g.OutputPath, err)
+		}
+		defer f.Close()
+		f.Write(b)
+	}
+
 }

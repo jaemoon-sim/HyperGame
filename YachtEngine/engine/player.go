@@ -16,11 +16,13 @@ type Player struct {
 	AlgorithmPort int `json:"-"`
 }
 
+type InnerDecision struct {
+	Keep       []int   `json:"keep"`
+	ScoreTitle *string `json:"choice"`
+}
+
 type Decision struct {
-	InnerDecision struct {
-		Keep       []int   `json:"keep"`
-		ScoreTitle *string `json:"choice"`
-	} `json:"decision"`
+	InnerDecision `json:"decision"`
 }
 
 func (d Decision) String() string {
@@ -34,19 +36,18 @@ func (d Decision) keepDices(diceSet *DiceSet) {
 	}
 }
 
-func (p *Player) Play(state *State, diceSet *DiceSet) (nextTrial bool) {
-	decision := p.GetDecision(state)
-	fmt.Printf("%s\n", decision.String())
+func (p *Player) Play(state *State, diceSet *DiceSet) (decision Decision, nextTrial bool) {
+	decision = p.GetDecision(state)
 	if decision.InnerDecision.ScoreTitle != nil {
 		decision.keepDices(diceSet)
 		err := p.ScoreBoard.SetScore(*decision.InnerDecision.ScoreTitle, diceSet)
 		if err != nil {
 			log.Fatalf("player(%s) invalid score title %s: %v\n", p.ID, *decision.InnerDecision.ScoreTitle, err)
 		}
-		return false
+		return decision, false
 	}
 
-	return true
+	return decision, true
 }
 
 func TODO() {}
