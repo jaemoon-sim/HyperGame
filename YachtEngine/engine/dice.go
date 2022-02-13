@@ -5,6 +5,7 @@ import (
 	"fmt"
 	"math/rand"
 	"sort"
+	"time"
 )
 
 type Dice struct {
@@ -16,7 +17,7 @@ type DiceSet [5]Dice
 
 func NewDiceSet() *DiceSet {
 	result := &DiceSet{}
-	for i, _ := range result {
+	for i := range result {
 		result[i].Value = i + 1
 	}
 	return result
@@ -42,6 +43,7 @@ func (ds *DiceSet) ToInts() [5]int {
 }
 
 func (ds *DiceSet) Roll() {
+	rand.Seed(time.Now().UnixNano())
 	for i, dice := range ds {
 		if dice.Kept {
 			continue
