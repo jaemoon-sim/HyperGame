@@ -25,6 +25,10 @@ go build --o yachtengine main.go
 
 ```
 {
+ "players": [
+  "jb",
+  "jb2"
+ ],
  "log": [
   {
    "state": {
@@ -32,14 +36,30 @@ go build --o yachtengine main.go
     "player": "jb",
     "trial": 1,
     "dices": [
-     5,
-     3,
-     1,
-     3,
-     2
+     2,
+     6,
+     2,
+     2,
+     4
     ],
     "scoreBoard": {
      "jb": {
+      "aces": null,
+      "deuces": null,
+      "threes": null,
+      "fours": null,
+      "fives": null,
+      "sixes": null,
+      "subtotal": 0,
+      "choice": null,
+      "fourKind": null,
+      "fullHouse": null,
+      "smallStraight": null,
+      "largeStraight": null,
+      "yacht": null,
+      "total": 0
+     },
+     "jb2": {
       "aces": null,
       "deuces": null,
       "threes": null,
@@ -65,29 +85,29 @@ go build --o yachtengine main.go
      3,
      4
     ],
-    "choice": "threes"
+    "choice": "sixes"
    }
   },
   {
    "state": {
-    "turn": 2,
-    "player": "jb",
+    "turn": 1,
+    "player": "jb2",
     "trial": 1,
     "dices": [
-     6,
-     1,
      5,
-     1,
-     4
+     2,
+     6,
+     4,
+     6
     ],
     "scoreBoard": {
      "jb": {
       "aces": null,
       "deuces": null,
-      "threes": 6,
+      "threes": null,
       "fours": null,
       "fives": null,
-      "sixes": null,
+      "sixes": 6,
       "subtotal": 6,
       "choice": null,
       "fourKind": null,
@@ -96,6 +116,22 @@ go build --o yachtengine main.go
       "largeStraight": null,
       "yacht": null,
       "total": 6
+     },
+     "jb2": {
+      "aces": null,
+      "deuces": null,
+      "threes": null,
+      "fours": null,
+      "fives": null,
+      "sixes": null,
+      "subtotal": 0,
+      "choice": null,
+      "fourKind": null,
+      "fullHouse": null,
+      "smallStraight": null,
+      "largeStraight": null,
+      "yacht": null,
+      "total": 0
      }
     }
    },
@@ -112,24 +148,40 @@ go build --o yachtengine main.go
   },
   {
    "state": {
-    "turn": 3,
+    "turn": 2,
     "player": "jb",
     "trial": 1,
     "dices": [
+     2,
      4,
-     1,
      2,
-     2,
+     6,
      5
     ],
     "scoreBoard": {
      "jb": {
       "aces": null,
       "deuces": null,
-      "threes": 6,
+      "threes": null,
       "fours": null,
       "fives": null,
       "sixes": 6,
+      "subtotal": 6,
+      "choice": null,
+      "fourKind": null,
+      "fullHouse": null,
+      "smallStraight": null,
+      "largeStraight": null,
+      "yacht": null,
+      "total": 6
+     },
+     "jb2": {
+      "aces": null,
+      "deuces": null,
+      "threes": null,
+      "fours": null,
+      "fives": null,
+      "sixes": 12,
       "subtotal": 12,
       "choice": null,
       "fourKind": null,
@@ -154,24 +206,98 @@ go build --o yachtengine main.go
   },
   {
    "state": {
-    "turn": 4,
-    "player": "jb",
+    "turn": 2,
+    "player": "jb2",
     "trial": 1,
     "dices": [
-     3,
-     1,
-     4,
      5,
-     2
+     2,
+     2,
+     6,
+     4
     ],
     "scoreBoard": {
      "jb": {
       "aces": null,
       "deuces": null,
-      "threes": 6,
+      "threes": null,
       "fours": null,
       "fives": 5,
       "sixes": 6,
+      "subtotal": 11,
+      "choice": null,
+      "fourKind": null,
+      "fullHouse": null,
+      "smallStraight": null,
+      "largeStraight": null,
+      "yacht": null,
+      "total": 11
+     },
+     "jb2": {
+      "aces": null,
+      "deuces": null,
+      "threes": null,
+      "fours": null,
+      "fives": null,
+      "sixes": 12,
+      "subtotal": 12,
+      "choice": null,
+      "fourKind": null,
+      "fullHouse": null,
+      "smallStraight": null,
+      "largeStraight": null,
+      "yacht": null,
+      "total": 12
+     }
+    }
+   },
+   "decision": {
+    "keep": [
+     0,
+     1,
+     2,
+     3,
+     4
+    ],
+    "choice": "fives"
+   }
+  },
+  {
+   "state": {
+    "turn": 3,
+    "player": "jb",
+    "trial": 1,
+    "dices": [
+     5,
+     1,
+     1,
+     4,
+     4
+    ],
+    "scoreBoard": {
+     "jb": {
+      "aces": null,
+      "deuces": null,
+      "threes": null,
+      "fours": null,
+      "fives": 5,
+      "sixes": 6,
+      "subtotal": 11,
+      "choice": null,
+      "fourKind": null,
+      "fullHouse": null,
+      "smallStraight": null,
+      "largeStraight": null,
+      "yacht": null,
+      "total": 11
+     },
+     "jb2": {
+      "aces": null,
+      "deuces": null,
+      "threes": null,
+      "fours": null,
+      "fives": 5,
+      "sixes": 12,
       "subtotal": 17,
       "choice": null,
       "fourKind": null,
@@ -191,121 +317,53 @@ go build --o yachtengine main.go
      3,
      4
     ],
-    "choice": "smallStraight"
+    "choice": "fours"
    }
   },
   {
    "state": {
-    "turn": 5,
-    "player": "jb",
+    "turn": 3,
+    "player": "jb2",
     "trial": 1,
     "dices": [
      1,
-     1,
-     1,
+     4,
+     5,
      2,
-     2
+     4
     ],
     "scoreBoard": {
      "jb": {
       "aces": null,
       "deuces": null,
-      "threes": 6,
-      "fours": null,
+      "threes": null,
+      "fours": 8,
       "fives": 5,
       "sixes": 6,
+      "subtotal": 19,
+      "choice": null,
+      "fourKind": null,
+      "fullHouse": null,
+      "smallStraight": null,
+      "largeStraight": null,
+      "yacht": null,
+      "total": 19
+     },
+     "jb2": {
+      "aces": null,
+      "deuces": null,
+      "threes": null,
+      "fours": null,
+      "fives": 5,
+      "sixes": 12,
       "subtotal": 17,
       "choice": null,
       "fourKind": null,
       "fullHouse": null,
-      "smallStraight": 15,
+      "smallStraight": null,
       "largeStraight": null,
       "yacht": null,
-      "total": 32
-     }
-    }
-   },
-   "decision": {
-    "keep": [
-     0,
-     1,
-     2,
-     3,
-     4
-    ],
-    "choice": "fullHouse"
-   }
-  },
-  {
-   "state": {
-    "turn": 6,
-    "player": "jb",
-    "trial": 1,
-    "dices": [
-     5,
-     5,
-     3,
-     4,
-     2
-    ],
-    "scoreBoard": {
-     "jb": {
-      "aces": null,
-      "deuces": null,
-      "threes": 6,
-      "fours": null,
-      "fives": 5,
-      "sixes": 6,
-      "subtotal": 17,
-      "choice": null,
-      "fourKind": null,
-      "fullHouse": 7,
-      "smallStraight": 15,
-      "largeStraight": null,
-      "yacht": null,
-      "total": 39
-     }
-    }
-   },
-   "decision": {
-    "keep": [
-     0,
-     1,
-     2,
-     3,
-     4
-    ],
-    "choice": "choice"
-   }
-  },
-  {
-   "state": {
-    "turn": 7,
-    "player": "jb",
-    "trial": 1,
-    "dices": [
-     1,
-     4,
-     6,
-     1,
-     3
-    ],
-    "scoreBoard": {
-     "jb": {
-      "aces": null,
-      "deuces": null,
-      "threes": 6,
-      "fours": null,
-      "fives": 5,
-      "sixes": 6,
-      "subtotal": 17,
-      "choice": 19,
-      "fourKind": null,
-      "fullHouse": 7,
-      "smallStraight": 15,
-      "largeStraight": null,
-      "yacht": null,
-      "total": 58
+      "total": 17
      }
     }
    },
@@ -322,32 +380,48 @@ go build --o yachtengine main.go
   },
   {
    "state": {
-    "turn": 8,
+    "turn": 4,
     "player": "jb",
     "trial": 1,
     "dices": [
-     6,
-     2,
-     2,
-     2,
+     1,
+     5,
+     4,
+     4,
      5
     ],
     "scoreBoard": {
      "jb": {
       "aces": null,
       "deuces": null,
-      "threes": 6,
-      "fours": 4,
+      "threes": null,
+      "fours": 8,
       "fives": 5,
       "sixes": 6,
-      "subtotal": 21,
-      "choice": 19,
+      "subtotal": 19,
+      "choice": null,
       "fourKind": null,
-      "fullHouse": 7,
-      "smallStraight": 15,
+      "fullHouse": null,
+      "smallStraight": null,
       "largeStraight": null,
       "yacht": null,
-      "total": 62
+      "total": 19
+     },
+     "jb2": {
+      "aces": null,
+      "deuces": null,
+      "threes": null,
+      "fours": 8,
+      "fives": 5,
+      "sixes": 12,
+      "subtotal": 25,
+      "choice": null,
+      "fourKind": null,
+      "fullHouse": null,
+      "smallStraight": null,
+      "largeStraight": null,
+      "yacht": null,
+      "total": 25
      }
     }
    },
@@ -359,37 +433,169 @@ go build --o yachtengine main.go
      3,
      4
     ],
-    "choice": "deuces"
+    "choice": "choice"
    }
   },
   {
    "state": {
-    "turn": 9,
-    "player": "jb",
+    "turn": 4,
+    "player": "jb2",
     "trial": 1,
     "dices": [
-     3,
-     3,
+     2,
      5,
-     6,
-     1
+     2,
+     1,
+     6
     ],
     "scoreBoard": {
      "jb": {
       "aces": null,
-      "deuces": 6,
-      "threes": 6,
-      "fours": 4,
+      "deuces": null,
+      "threes": null,
+      "fours": 8,
       "fives": 5,
       "sixes": 6,
-      "subtotal": 27,
+      "subtotal": 19,
       "choice": 19,
       "fourKind": null,
-      "fullHouse": 7,
-      "smallStraight": 15,
+      "fullHouse": null,
+      "smallStraight": null,
       "largeStraight": null,
       "yacht": null,
-      "total": 68
+      "total": 38
+     },
+     "jb2": {
+      "aces": null,
+      "deuces": null,
+      "threes": null,
+      "fours": 8,
+      "fives": 5,
+      "sixes": 12,
+      "subtotal": 25,
+      "choice": null,
+      "fourKind": null,
+      "fullHouse": null,
+      "smallStraight": null,
+      "largeStraight": null,
+      "yacht": null,
+      "total": 25
+     }
+    }
+   },
+   "decision": {
+    "keep": [
+     0,
+     1,
+     2,
+     3,
+     4
+    ],
+    "choice": "choice"
+   }
+  },
+  {
+   "state": {
+    "turn": 5,
+    "player": "jb",
+    "trial": 1,
+    "dices": [
+     1,
+     1,
+     5,
+     3,
+     3
+    ],
+    "scoreBoard": {
+     "jb": {
+      "aces": null,
+      "deuces": null,
+      "threes": null,
+      "fours": 8,
+      "fives": 5,
+      "sixes": 6,
+      "subtotal": 19,
+      "choice": 19,
+      "fourKind": null,
+      "fullHouse": null,
+      "smallStraight": null,
+      "largeStraight": null,
+      "yacht": null,
+      "total": 38
+     },
+     "jb2": {
+      "aces": null,
+      "deuces": null,
+      "threes": null,
+      "fours": 8,
+      "fives": 5,
+      "sixes": 12,
+      "subtotal": 25,
+      "choice": 16,
+      "fourKind": null,
+      "fullHouse": null,
+      "smallStraight": null,
+      "largeStraight": null,
+      "yacht": null,
+      "total": 41
+     }
+    }
+   },
+   "decision": {
+    "keep": [
+     0,
+     1,
+     2,
+     3,
+     4
+    ],
+    "choice": "threes"
+   }
+  },
+  {
+   "state": {
+    "turn": 5,
+    "player": "jb2",
+    "trial": 1,
+    "dices": [
+     6,
+     1,
+     6,
+     1,
+     2
+    ],
+    "scoreBoard": {
+     "jb": {
+      "aces": null,
+      "deuces": null,
+      "threes": 6,
+      "fours": 8,
+      "fives": 5,
+      "sixes": 6,
+      "subtotal": 25,
+      "choice": 19,
+      "fourKind": null,
+      "fullHouse": null,
+      "smallStraight": null,
+      "largeStraight": null,
+      "yacht": null,
+      "total": 44
+     },
+     "jb2": {
+      "aces": null,
+      "deuces": null,
+      "threes": null,
+      "fours": 8,
+      "fives": 5,
+      "sixes": 12,
+      "subtotal": 25,
+      "choice": 16,
+      "fourKind": null,
+      "fullHouse": null,
+      "smallStraight": null,
+      "largeStraight": null,
+      "yacht": null,
+      "total": 41
      }
     }
    },
@@ -406,32 +612,512 @@ go build --o yachtengine main.go
   },
   {
    "state": {
-    "turn": 10,
+    "turn": 6,
     "player": "jb",
     "trial": 1,
     "dices": [
-     2,
-     4,
+     6,
      5,
      2,
+     1,
+     5
+    ],
+    "scoreBoard": {
+     "jb": {
+      "aces": null,
+      "deuces": null,
+      "threes": 6,
+      "fours": 8,
+      "fives": 5,
+      "sixes": 6,
+      "subtotal": 25,
+      "choice": 19,
+      "fourKind": null,
+      "fullHouse": null,
+      "smallStraight": null,
+      "largeStraight": null,
+      "yacht": null,
+      "total": 44
+     },
+     "jb2": {
+      "aces": 2,
+      "deuces": null,
+      "threes": null,
+      "fours": 8,
+      "fives": 5,
+      "sixes": 12,
+      "subtotal": 27,
+      "choice": 16,
+      "fourKind": null,
+      "fullHouse": null,
+      "smallStraight": null,
+      "largeStraight": null,
+      "yacht": null,
+      "total": 43
+     }
+    }
+   },
+   "decision": {
+    "keep": [
+     0,
+     1,
+     2,
+     3,
+     4
+    ],
+    "choice": "deuces"
+   }
+  },
+  {
+   "state": {
+    "turn": 6,
+    "player": "jb2",
+    "trial": 1,
+    "dices": [
+     6,
+     4,
+     5,
+     4,
+     5
+    ],
+    "scoreBoard": {
+     "jb": {
+      "aces": null,
+      "deuces": 2,
+      "threes": 6,
+      "fours": 8,
+      "fives": 5,
+      "sixes": 6,
+      "subtotal": 27,
+      "choice": 19,
+      "fourKind": null,
+      "fullHouse": null,
+      "smallStraight": null,
+      "largeStraight": null,
+      "yacht": null,
+      "total": 46
+     },
+     "jb2": {
+      "aces": 2,
+      "deuces": null,
+      "threes": null,
+      "fours": 8,
+      "fives": 5,
+      "sixes": 12,
+      "subtotal": 27,
+      "choice": 16,
+      "fourKind": null,
+      "fullHouse": null,
+      "smallStraight": null,
+      "largeStraight": null,
+      "yacht": null,
+      "total": 43
+     }
+    }
+   },
+   "decision": {
+    "keep": [
+     0,
+     1,
+     2,
+     3,
+     4
+    ],
+    "choice": "fullHouse"
+   }
+  },
+  {
+   "state": {
+    "turn": 7,
+    "player": "jb",
+    "trial": 1,
+    "dices": [
+     3,
+     6,
+     2,
+     6,
+     4
+    ],
+    "scoreBoard": {
+     "jb": {
+      "aces": null,
+      "deuces": 2,
+      "threes": 6,
+      "fours": 8,
+      "fives": 5,
+      "sixes": 6,
+      "subtotal": 27,
+      "choice": 19,
+      "fourKind": null,
+      "fullHouse": null,
+      "smallStraight": null,
+      "largeStraight": null,
+      "yacht": null,
+      "total": 46
+     },
+     "jb2": {
+      "aces": 2,
+      "deuces": null,
+      "threes": null,
+      "fours": 8,
+      "fives": 5,
+      "sixes": 12,
+      "subtotal": 27,
+      "choice": 16,
+      "fourKind": null,
+      "fullHouse": 0,
+      "smallStraight": null,
+      "largeStraight": null,
+      "yacht": null,
+      "total": 43
+     }
+    }
+   },
+   "decision": {
+    "keep": [
+     0,
+     1,
+     2,
+     3,
+     4
+    ],
+    "choice": "fullHouse"
+   }
+  },
+  {
+   "state": {
+    "turn": 7,
+    "player": "jb2",
+    "trial": 1,
+    "dices": [
+     4,
+     2,
+     6,
+     2,
+     2
+    ],
+    "scoreBoard": {
+     "jb": {
+      "aces": null,
+      "deuces": 2,
+      "threes": 6,
+      "fours": 8,
+      "fives": 5,
+      "sixes": 6,
+      "subtotal": 27,
+      "choice": 19,
+      "fourKind": null,
+      "fullHouse": 0,
+      "smallStraight": null,
+      "largeStraight": null,
+      "yacht": null,
+      "total": 46
+     },
+     "jb2": {
+      "aces": 2,
+      "deuces": null,
+      "threes": null,
+      "fours": 8,
+      "fives": 5,
+      "sixes": 12,
+      "subtotal": 27,
+      "choice": 16,
+      "fourKind": null,
+      "fullHouse": 0,
+      "smallStraight": null,
+      "largeStraight": null,
+      "yacht": null,
+      "total": 43
+     }
+    }
+   },
+   "decision": {
+    "keep": [
+     0,
+     1,
+     2,
+     3,
+     4
+    ],
+    "choice": "deuces"
+   }
+  },
+  {
+   "state": {
+    "turn": 8,
+    "player": "jb",
+    "trial": 1,
+    "dices": [
+     1,
+     3,
+     4,
+     3,
+     3
+    ],
+    "scoreBoard": {
+     "jb": {
+      "aces": null,
+      "deuces": 2,
+      "threes": 6,
+      "fours": 8,
+      "fives": 5,
+      "sixes": 6,
+      "subtotal": 27,
+      "choice": 19,
+      "fourKind": null,
+      "fullHouse": 0,
+      "smallStraight": null,
+      "largeStraight": null,
+      "yacht": null,
+      "total": 46
+     },
+     "jb2": {
+      "aces": 2,
+      "deuces": 6,
+      "threes": null,
+      "fours": 8,
+      "fives": 5,
+      "sixes": 12,
+      "subtotal": 33,
+      "choice": 16,
+      "fourKind": null,
+      "fullHouse": 0,
+      "smallStraight": null,
+      "largeStraight": null,
+      "yacht": null,
+      "total": 49
+     }
+    }
+   },
+   "decision": {
+    "keep": [
+     0,
+     1,
+     2,
+     3,
+     4
+    ],
+    "choice": "aces"
+   }
+  },
+  {
+   "state": {
+    "turn": 8,
+    "player": "jb2",
+    "trial": 1,
+    "dices": [
+     1,
+     3,
+     3,
+     3,
      3
     ],
     "scoreBoard": {
      "jb": {
       "aces": 1,
-      "deuces": 6,
+      "deuces": 2,
       "threes": 6,
-      "fours": 4,
+      "fours": 8,
       "fives": 5,
       "sixes": 6,
       "subtotal": 28,
       "choice": 19,
       "fourKind": null,
-      "fullHouse": 7,
-      "smallStraight": 15,
+      "fullHouse": 0,
+      "smallStraight": null,
       "largeStraight": null,
       "yacht": null,
-      "total": 69
+      "total": 47
+     },
+     "jb2": {
+      "aces": 2,
+      "deuces": 6,
+      "threes": null,
+      "fours": 8,
+      "fives": 5,
+      "sixes": 12,
+      "subtotal": 33,
+      "choice": 16,
+      "fourKind": null,
+      "fullHouse": 0,
+      "smallStraight": null,
+      "largeStraight": null,
+      "yacht": null,
+      "total": 49
+     }
+    }
+   },
+   "decision": {
+    "keep": [
+     0,
+     1,
+     2,
+     3,
+     4
+    ],
+    "choice": "fourKind"
+   }
+  },
+  {
+   "state": {
+    "turn": 9,
+    "player": "jb",
+    "trial": 1,
+    "dices": [
+     6,
+     6,
+     6,
+     3,
+     6
+    ],
+    "scoreBoard": {
+     "jb": {
+      "aces": 1,
+      "deuces": 2,
+      "threes": 6,
+      "fours": 8,
+      "fives": 5,
+      "sixes": 6,
+      "subtotal": 28,
+      "choice": 19,
+      "fourKind": null,
+      "fullHouse": 0,
+      "smallStraight": null,
+      "largeStraight": null,
+      "yacht": null,
+      "total": 47
+     },
+     "jb2": {
+      "aces": 2,
+      "deuces": 6,
+      "threes": null,
+      "fours": 8,
+      "fives": 5,
+      "sixes": 12,
+      "subtotal": 33,
+      "choice": 16,
+      "fourKind": 13,
+      "fullHouse": 0,
+      "smallStraight": null,
+      "largeStraight": null,
+      "yacht": null,
+      "total": 62
+     }
+    }
+   },
+   "decision": {
+    "keep": [
+     0,
+     1,
+     2,
+     3,
+     4
+    ],
+    "choice": "fourKind"
+   }
+  },
+  {
+   "state": {
+    "turn": 9,
+    "player": "jb2",
+    "trial": 1,
+    "dices": [
+     6,
+     4,
+     3,
+     5,
+     1
+    ],
+    "scoreBoard": {
+     "jb": {
+      "aces": 1,
+      "deuces": 2,
+      "threes": 6,
+      "fours": 8,
+      "fives": 5,
+      "sixes": 6,
+      "subtotal": 28,
+      "choice": 19,
+      "fourKind": 27,
+      "fullHouse": 0,
+      "smallStraight": null,
+      "largeStraight": null,
+      "yacht": null,
+      "total": 74
+     },
+     "jb2": {
+      "aces": 2,
+      "deuces": 6,
+      "threes": null,
+      "fours": 8,
+      "fives": 5,
+      "sixes": 12,
+      "subtotal": 33,
+      "choice": 16,
+      "fourKind": 13,
+      "fullHouse": 0,
+      "smallStraight": null,
+      "largeStraight": null,
+      "yacht": null,
+      "total": 62
+     }
+    }
+   },
+   "decision": {
+    "keep": [
+     0,
+     1,
+     2,
+     3,
+     4
+    ],
+    "choice": "threes"
+   }
+  },
+  {
+   "state": {
+    "turn": 10,
+    "player": "jb",
+    "trial": 1,
+    "dices": [
+     5,
+     4,
+     2,
+     5,
+     4
+    ],
+    "scoreBoard": {
+     "jb": {
+      "aces": 1,
+      "deuces": 2,
+      "threes": 6,
+      "fours": 8,
+      "fives": 5,
+      "sixes": 6,
+      "subtotal": 28,
+      "choice": 19,
+      "fourKind": 27,
+      "fullHouse": 0,
+      "smallStraight": null,
+      "largeStraight": null,
+      "yacht": null,
+      "total": 74
+     },
+     "jb2": {
+      "aces": 2,
+      "deuces": 6,
+      "threes": 3,
+      "fours": 8,
+      "fives": 5,
+      "sixes": 12,
+      "subtotal": 36,
+      "choice": 16,
+      "fourKind": 13,
+      "fullHouse": 0,
+      "smallStraight": null,
+      "largeStraight": null,
+      "yacht": null,
+      "total": 65
      }
     }
    },
@@ -448,32 +1134,222 @@ go build --o yachtengine main.go
   },
   {
    "state": {
-    "turn": 11,
-    "player": "jb",
+    "turn": 10,
+    "player": "jb2",
     "trial": 1,
     "dices": [
      3,
-     5,
+     1,
      4,
-     6,
-     4
+     5,
+     2
     ],
     "scoreBoard": {
      "jb": {
       "aces": 1,
-      "deuces": 6,
+      "deuces": 2,
       "threes": 6,
-      "fours": 4,
+      "fours": 8,
       "fives": 5,
       "sixes": 6,
       "subtotal": 28,
       "choice": 19,
-      "fourKind": null,
-      "fullHouse": 7,
+      "fourKind": 27,
+      "fullHouse": 0,
+      "smallStraight": null,
+      "largeStraight": 0,
+      "yacht": null,
+      "total": 74
+     },
+     "jb2": {
+      "aces": 2,
+      "deuces": 6,
+      "threes": 3,
+      "fours": 8,
+      "fives": 5,
+      "sixes": 12,
+      "subtotal": 36,
+      "choice": 16,
+      "fourKind": 13,
+      "fullHouse": 0,
+      "smallStraight": null,
+      "largeStraight": null,
+      "yacht": null,
+      "total": 65
+     }
+    }
+   },
+   "decision": {
+    "keep": [
+     0,
+     1,
+     2,
+     3,
+     4
+    ],
+    "choice": "smallStraight"
+   }
+  },
+  {
+   "state": {
+    "turn": 11,
+    "player": "jb",
+    "trial": 1,
+    "dices": [
+     2,
+     2,
+     4,
+     6,
+     1
+    ],
+    "scoreBoard": {
+     "jb": {
+      "aces": 1,
+      "deuces": 2,
+      "threes": 6,
+      "fours": 8,
+      "fives": 5,
+      "sixes": 6,
+      "subtotal": 28,
+      "choice": 19,
+      "fourKind": 27,
+      "fullHouse": 0,
+      "smallStraight": null,
+      "largeStraight": 0,
+      "yacht": null,
+      "total": 74
+     },
+     "jb2": {
+      "aces": 2,
+      "deuces": 6,
+      "threes": 3,
+      "fours": 8,
+      "fives": 5,
+      "sixes": 12,
+      "subtotal": 36,
+      "choice": 16,
+      "fourKind": 13,
+      "fullHouse": 0,
+      "smallStraight": 15,
+      "largeStraight": null,
+      "yacht": null,
+      "total": 80
+     }
+    }
+   },
+   "decision": {
+    "keep": [
+     0,
+     1,
+     2,
+     3,
+     4
+    ],
+    "choice": "smallStraight"
+   }
+  },
+  {
+   "state": {
+    "turn": 11,
+    "player": "jb2",
+    "trial": 1,
+    "dices": [
+     5,
+     5,
+     2,
+     6,
+     5
+    ],
+    "scoreBoard": {
+     "jb": {
+      "aces": 1,
+      "deuces": 2,
+      "threes": 6,
+      "fours": 8,
+      "fives": 5,
+      "sixes": 6,
+      "subtotal": 28,
+      "choice": 19,
+      "fourKind": 27,
+      "fullHouse": 0,
+      "smallStraight": 0,
+      "largeStraight": 0,
+      "yacht": null,
+      "total": 74
+     },
+     "jb2": {
+      "aces": 2,
+      "deuces": 6,
+      "threes": 3,
+      "fours": 8,
+      "fives": 5,
+      "sixes": 12,
+      "subtotal": 36,
+      "choice": 16,
+      "fourKind": 13,
+      "fullHouse": 0,
+      "smallStraight": 15,
+      "largeStraight": null,
+      "yacht": null,
+      "total": 80
+     }
+    }
+   },
+   "decision": {
+    "keep": [
+     0,
+     1,
+     2,
+     3,
+     4
+    ],
+    "choice": "largeStraight"
+   }
+  },
+  {
+   "state": {
+    "turn": 12,
+    "player": "jb",
+    "trial": 1,
+    "dices": [
+     3,
+     4,
+     4,
+     3,
+     2
+    ],
+    "scoreBoard": {
+     "jb": {
+      "aces": 1,
+      "deuces": 2,
+      "threes": 6,
+      "fours": 8,
+      "fives": 5,
+      "sixes": 6,
+      "subtotal": 28,
+      "choice": 19,
+      "fourKind": 27,
+      "fullHouse": 0,
+      "smallStraight": 0,
+      "largeStraight": 0,
+      "yacht": null,
+      "total": 74
+     },
+     "jb2": {
+      "aces": 2,
+      "deuces": 6,
+      "threes": 3,
+      "fours": 8,
+      "fives": 5,
+      "sixes": 12,
+      "subtotal": 36,
+      "choice": 16,
+      "fourKind": 13,
+      "fullHouse": 0,
       "smallStraight": 15,
       "largeStraight": 0,
       "yacht": null,
-      "total": 69
+      "total": 80
      }
     }
    },
@@ -491,31 +1367,47 @@ go build --o yachtengine main.go
   {
    "state": {
     "turn": 12,
-    "player": "jb",
+    "player": "jb2",
     "trial": 1,
     "dices": [
-     4,
+     2,
+     5,
      6,
-     3,
      4,
-     4
+     5
     ],
     "scoreBoard": {
      "jb": {
       "aces": 1,
-      "deuces": 6,
+      "deuces": 2,
       "threes": 6,
-      "fours": 4,
+      "fours": 8,
       "fives": 5,
       "sixes": 6,
       "subtotal": 28,
       "choice": 19,
-      "fourKind": null,
-      "fullHouse": 7,
-      "smallStraight": 15,
+      "fourKind": 27,
+      "fullHouse": 0,
+      "smallStraight": 0,
       "largeStraight": 0,
       "yacht": 0,
-      "total": 69
+      "total": 74
+     },
+     "jb2": {
+      "aces": 2,
+      "deuces": 6,
+      "threes": 3,
+      "fours": 8,
+      "fives": 5,
+      "sixes": 12,
+      "subtotal": 36,
+      "choice": 16,
+      "fourKind": 13,
+      "fullHouse": 0,
+      "smallStraight": 15,
+      "largeStraight": 0,
+      "yacht": null,
+      "total": 80
      }
     }
    },
@@ -527,7 +1419,7 @@ go build --o yachtengine main.go
      3,
      4
     ],
-    "choice": "fourKind"
+    "choice": "yacht"
    }
   }
  ],
@@ -542,19 +1434,35 @@ go build --o yachtengine main.go
   "scoreBoard": {
    "jb": {
     "aces": 1,
-    "deuces": 6,
+    "deuces": 2,
     "threes": 6,
-    "fours": 4,
+    "fours": 8,
     "fives": 5,
     "sixes": 6,
     "subtotal": 28,
     "choice": 19,
-    "fourKind": 0,
-    "fullHouse": 7,
+    "fourKind": 27,
+    "fullHouse": 0,
+    "smallStraight": 0,
+    "largeStraight": 0,
+    "yacht": 0,
+    "total": 74
+   },
+   "jb2": {
+    "aces": 2,
+    "deuces": 6,
+    "threes": 3,
+    "fours": 8,
+    "fives": 5,
+    "sixes": 12,
+    "subtotal": 36,
+    "choice": 16,
+    "fourKind": 13,
+    "fullHouse": 0,
     "smallStraight": 15,
     "largeStraight": 0,
     "yacht": 0,
-    "total": 69
+    "total": 80
    }
   }
  }
