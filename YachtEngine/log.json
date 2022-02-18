@@ -1,45 +1,53 @@
 {
+ "players": [
+  "jb",
+  "jb2"
+ ],
  "log": [
   {
    "state": {
     "turn": 1,
-    "player": "zxcv",
+    "player": "jb",
     "trial": 1,
     "dices": [
+     2,
      6,
-     4,
-     6,
-     6,
-     2
+     2,
+     2,
+     4
     ],
     "scoreBoard": {
-     "asdf": {
+     "jb": {
       "aces": null,
       "deuces": null,
       "threes": null,
       "fours": null,
       "fives": null,
       "sixes": null,
+      "subtotal": 0,
       "choice": null,
       "fourKind": null,
       "fullHouse": null,
       "smallStraight": null,
       "largeStraight": null,
-      "yacht": null
+      "yacht": null,
+      "total": 0
      },
-     "zxcv": {
+     "jb2": {
       "aces": null,
       "deuces": null,
       "threes": null,
       "fours": null,
       "fives": null,
       "sixes": null,
+      "subtotal": 0,
       "choice": null,
       "fourKind": null,
       "fullHouse": null,
       "smallStraight": null,
       "largeStraight": null,
-      "yacht": null
+      "yacht": null,
+      "total": 0
      }
     }
    },
@@ -57,151 +65,47 @@
   {
    "state": {
     "turn": 1,
-    "player": "asdf",
+    "player": "jb2",
     "trial": 1,
     "dices": [
-     1,
-     2,
-     3,
      5,
-     1
-    ],
-    "scoreBoard": {
-     "asdf": {
-      "aces": null,
-      "deuces": null,
-      "threes": null,
-      "fours": null,
-      "fives": null,
-      "sixes": null,
-      "choice": null,
-      "fourKind": null,
-      "fullHouse": null,
-      "smallStraight": null,
-      "largeStraight": null,
-      "yacht": null
-     },
-     "zxcv": {
-      "aces": null,
-      "deuces": null,
-      "threes": null,
-      "fours": null,
-      "fives": null,
-      "sixes": 18,
-      "choice": null,
-      "fourKind": null,
-      "fullHouse": null,
-      "smallStraight": null,
-      "largeStraight": null,
-      "yacht": null
-     }
-    }
-   },
-   "decision": {
-    "keep": [
-     0,
-     1,
      2,
-     3,
-     4
-    ],
-    "choice": "fives"
-   }
-  },
-  {
-   "state": {
-    "turn": 2,
-    "player": "zxcv",
-    "trial": 1,
-    "dices": [
-     3,
-     2,
-     1,
      6,
-     5
-    ],
-    "scoreBoard": {
-     "asdf": {
-      "aces": null,
-      "deuces": null,
-      "threes": null,
-      "fours": null,
-      "fives": 5,
-      "sixes": null,
-      "choice": null,
-      "fourKind": null,
-      "fullHouse": null,
-      "smallStraight": null,
-      "largeStraight": null,
-      "yacht": null
-     },
-     "zxcv": {
-      "aces": null,
-      "deuces": null,
-      "threes": null,
-      "fours": null,
-      "fives": null,
-      "sixes": 18,
-      "choice": null,
-      "fourKind": null,
-      "fullHouse": null,
-      "smallStraight": null,
-      "largeStraight": null,
-      "yacht": null
-     }
-    }
-   },
-   "decision": {
-    "keep": [
-     0,
-     1,
-     2,
-     3,
-     4
-    ],
-    "choice": "fives"
-   }
-  },
-  {
-   "state": {
-    "turn": 2,
-    "player": "asdf",
-    "trial": 1,
-    "dices": [
-     3,
      4,
-     6,
-     6,
-     3
+     6
     ],
     "scoreBoard": {
-     "asdf": {
+     "jb": {
       "aces": null,
       "deuces": null,
       "threes": null,
       "fours": null,
-      "fives": 5,
-      "sixes": null,
+      "fives": null,
+      "sixes": 6,
+      "subtotal": 6,
       "choice": null,
       "fourKind": null,
       "fullHouse": null,
       "smallStraight": null,
       "largeStraight": null,
-      "yacht": null
+      "yacht": null,
+      "total": 6
      },
-     "zxcv": {
+     "jb2": {
       "aces": null,
       "deuces": null,
       "threes": null,
       "fours": null,
-      "fives": 5,
-      "sixes": 18,
+      "fives": null,
+      "sixes": null,
+      "subtotal": 0,
       "choice": null,
       "fourKind": null,
       "fullHouse": null,
       "smallStraight": null,
       "largeStraight": null,
-      "yacht": null
+      "yacht": null,
+      "total": 0
      }
     }
    },
@@ -218,44 +122,48 @@
   },
   {
    "state": {
-    "turn": 3,
-    "player": "zxcv",
+    "turn": 2,
+    "player": "jb",
     "trial": 1,
     "dices": [
+     2,
+     4,
+     2,
      6,
-     1,
-     3,
-     5,
-     4
+     5
     ],
     "scoreBoard": {
-     "asdf": {
+     "jb": {
       "aces": null,
       "deuces": null,
       "threes": null,
       "fours": null,
-      "fives": 5,
-      "sixes": 12,
+      "fives": null,
+      "sixes": 6,
+      "subtotal": 6,
       "choice": null,
       "fourKind": null,
       "fullHouse": null,
       "smallStraight": null,
       "largeStraight": null,
-      "yacht": null
+      "yacht": null,
+      "total": 6
      },
-     "zxcv": {
+     "jb2": {
       "aces": null,
       "deuces": null,
       "threes": null,
       "fours": null,
-      "fives": 5,
-      "sixes": 18,
+      "fives": null,
+      "sixes": 12,
+      "subtotal": 12,
       "choice": null,
       "fourKind": null,
       "fullHouse": null,
       "smallStraight": null,
       "largeStraight": null,
-      "yacht": null
+      "yacht": null,
+      "total": 12
      }
     }
    },
@@ -267,49 +175,53 @@
      3,
      4
     ],
-    "choice": "choice"
+    "choice": "fives"
    }
   },
   {
    "state": {
-    "turn": 3,
-    "player": "asdf",
+    "turn": 2,
+    "player": "jb2",
     "trial": 1,
     "dices": [
-     2,
-     2,
      5,
-     1,
+     2,
+     2,
+     6,
      4
     ],
     "scoreBoard": {
-     "asdf": {
+     "jb": {
       "aces": null,
       "deuces": null,
       "threes": null,
       "fours": null,
       "fives": 5,
-      "sixes": 12,
+      "sixes": 6,
+      "subtotal": 11,
       "choice": null,
       "fourKind": null,
       "fullHouse": null,
       "smallStraight": null,
       "largeStraight": null,
-      "yacht": null
+      "yacht": null,
+      "total": 11
      },
-     "zxcv": {
+     "jb2": {
       "aces": null,
       "deuces": null,
       "threes": null,
       "fours": null,
-      "fives": 5,
-      "sixes": 18,
-      "choice": 19,
+      "fives": null,
+      "sixes": 12,
+      "subtotal": 12,
+      "choice": null,
       "fourKind": null,
       "fullHouse": null,
       "smallStraight": null,
       "largeStraight": null,
-      "yacht": null
+      "yacht": null,
+      "total": 12
      }
     }
    },
@@ -321,49 +233,111 @@
      3,
      4
     ],
-    "choice": "choice"
+    "choice": "fives"
    }
   },
   {
    "state": {
-    "turn": 4,
-    "player": "zxcv",
+    "turn": 3,
+    "player": "jb",
     "trial": 1,
     "dices": [
-     2,
+     5,
      1,
-     6,
-     6,
+     1,
+     4,
      4
     ],
     "scoreBoard": {
-     "asdf": {
+     "jb": {
+      "aces": null,
+      "deuces": null,
+      "threes": null,
+      "fours": null,
+      "fives": 5,
+      "sixes": 6,
+      "subtotal": 11,
+      "choice": null,
+      "fourKind": null,
+      "fullHouse": null,
+      "smallStraight": null,
+      "largeStraight": null,
+      "yacht": null,
+      "total": 11
+     },
+     "jb2": {
       "aces": null,
       "deuces": null,
       "threes": null,
       "fours": null,
       "fives": 5,
       "sixes": 12,
-      "choice": 14,
+      "subtotal": 17,
+      "choice": null,
       "fourKind": null,
       "fullHouse": null,
       "smallStraight": null,
       "largeStraight": null,
-      "yacht": null
+      "yacht": null,
+      "total": 17
+     }
+    }
+   },
+   "decision": {
+    "keep": [
+     0,
+     1,
+     2,
+     3,
+     4
+    ],
+    "choice": "fours"
+   }
+  },
+  {
+   "state": {
+    "turn": 3,
+    "player": "jb2",
+    "trial": 1,
+    "dices": [
+     1,
+     4,
+     5,
+     2,
+     4
+    ],
+    "scoreBoard": {
+     "jb": {
+      "aces": null,
+      "deuces": null,
+      "threes": null,
+      "fours": 8,
+      "fives": 5,
+      "sixes": 6,
+      "subtotal": 19,
+      "choice": null,
+      "fourKind": null,
+      "fullHouse": null,
+      "smallStraight": null,
+      "largeStraight": null,
+      "yacht": null,
+      "total": 19
      },
-     "zxcv": {
+     "jb2": {
       "aces": null,
       "deuces": null,
       "threes": null,
       "fours": null,
       "fives": 5,
-      "sixes": 18,
-      "choice": 19,
+      "sixes": 12,
+      "subtotal": 17,
+      "choice": null,
       "fourKind": null,
       "fullHouse": null,
       "smallStraight": null,
       "largeStraight": null,
-      "yacht": null
+      "yacht": null,
+      "total": 17
      }
     }
    },
@@ -381,43 +355,47 @@
   {
    "state": {
     "turn": 4,
-    "player": "asdf",
+    "player": "jb",
     "trial": 1,
     "dices": [
-     3,
+     1,
+     5,
      4,
-     2,
      4,
-     1
+     5
     ],
     "scoreBoard": {
-     "asdf": {
+     "jb": {
       "aces": null,
       "deuces": null,
       "threes": null,
-      "fours": null,
+      "fours": 8,
+      "fives": 5,
+      "sixes": 6,
+      "subtotal": 19,
+      "choice": null,
+      "fourKind": null,
+      "fullHouse": null,
+      "smallStraight": null,
+      "largeStraight": null,
+      "yacht": null,
+      "total": 19
+     },
+     "jb2": {
+      "aces": null,
+      "deuces": null,
+      "threes": null,
+      "fours": 8,
       "fives": 5,
       "sixes": 12,
-      "choice": 14,
+      "subtotal": 25,
+      "choice": null,
       "fourKind": null,
       "fullHouse": null,
       "smallStraight": null,
       "largeStraight": null,
-      "yacht": null
-     },
-     "zxcv": {
-      "aces": null,
-      "deuces": null,
-      "threes": null,
-      "fours": 4,
-      "fives": 5,
-      "sixes": 18,
-      "choice": 19,
-      "fourKind": null,
-      "fullHouse": null,
-      "smallStraight": null,
-      "largeStraight": null,
-      "yacht": null
+      "yacht": null,
+      "total": 25
      }
     }
    },
@@ -429,49 +407,169 @@
      3,
      4
     ],
-    "choice": "fours"
+    "choice": "choice"
+   }
+  },
+  {
+   "state": {
+    "turn": 4,
+    "player": "jb2",
+    "trial": 1,
+    "dices": [
+     2,
+     5,
+     2,
+     1,
+     6
+    ],
+    "scoreBoard": {
+     "jb": {
+      "aces": null,
+      "deuces": null,
+      "threes": null,
+      "fours": 8,
+      "fives": 5,
+      "sixes": 6,
+      "subtotal": 19,
+      "choice": 19,
+      "fourKind": null,
+      "fullHouse": null,
+      "smallStraight": null,
+      "largeStraight": null,
+      "yacht": null,
+      "total": 38
+     },
+     "jb2": {
+      "aces": null,
+      "deuces": null,
+      "threes": null,
+      "fours": 8,
+      "fives": 5,
+      "sixes": 12,
+      "subtotal": 25,
+      "choice": null,
+      "fourKind": null,
+      "fullHouse": null,
+      "smallStraight": null,
+      "largeStraight": null,
+      "yacht": null,
+      "total": 25
+     }
+    }
+   },
+   "decision": {
+    "keep": [
+     0,
+     1,
+     2,
+     3,
+     4
+    ],
+    "choice": "choice"
    }
   },
   {
    "state": {
     "turn": 5,
-    "player": "zxcv",
+    "player": "jb",
     "trial": 1,
     "dices": [
+     1,
+     1,
+     5,
+     3,
+     3
+    ],
+    "scoreBoard": {
+     "jb": {
+      "aces": null,
+      "deuces": null,
+      "threes": null,
+      "fours": 8,
+      "fives": 5,
+      "sixes": 6,
+      "subtotal": 19,
+      "choice": 19,
+      "fourKind": null,
+      "fullHouse": null,
+      "smallStraight": null,
+      "largeStraight": null,
+      "yacht": null,
+      "total": 38
+     },
+     "jb2": {
+      "aces": null,
+      "deuces": null,
+      "threes": null,
+      "fours": 8,
+      "fives": 5,
+      "sixes": 12,
+      "subtotal": 25,
+      "choice": 16,
+      "fourKind": null,
+      "fullHouse": null,
+      "smallStraight": null,
+      "largeStraight": null,
+      "yacht": null,
+      "total": 41
+     }
+    }
+   },
+   "decision": {
+    "keep": [
+     0,
+     1,
      2,
-     5,
-     5,
-     4,
+     3,
+     4
+    ],
+    "choice": "threes"
+   }
+  },
+  {
+   "state": {
+    "turn": 5,
+    "player": "jb2",
+    "trial": 1,
+    "dices": [
+     6,
+     1,
+     6,
+     1,
      2
     ],
     "scoreBoard": {
-     "asdf": {
+     "jb": {
+      "aces": null,
+      "deuces": null,
+      "threes": 6,
+      "fours": 8,
+      "fives": 5,
+      "sixes": 6,
+      "subtotal": 25,
+      "choice": 19,
+      "fourKind": null,
+      "fullHouse": null,
+      "smallStraight": null,
+      "largeStraight": null,
+      "yacht": null,
+      "total": 44
+     },
+     "jb2": {
       "aces": null,
       "deuces": null,
       "threes": null,
       "fours": 8,
       "fives": 5,
       "sixes": 12,
-      "choice": 14,
+      "subtotal": 25,
+      "choice": 16,
       "fourKind": null,
       "fullHouse": null,
       "smallStraight": null,
       "largeStraight": null,
-      "yacht": null
-     },
-     "zxcv": {
-      "aces": null,
-      "deuces": null,
-      "threes": null,
-      "fours": 4,
-      "fives": 5,
-      "sixes": 18,
-      "choice": 19,
-      "fourKind": null,
-      "fullHouse": null,
-      "smallStraight": null,
-      "largeStraight": null,
-      "yacht": null
+      "yacht": null,
+      "total": 41
      }
     }
    },
@@ -483,49 +581,53 @@
      3,
      4
     ],
-    "choice": "deuces"
+    "choice": "aces"
    }
   },
   {
    "state": {
-    "turn": 5,
-    "player": "asdf",
+    "turn": 6,
+    "player": "jb",
     "trial": 1,
     "dices": [
-     4,
-     5,
+     6,
      5,
      2,
-     4
+     1,
+     5
     ],
     "scoreBoard": {
-     "asdf": {
+     "jb": {
       "aces": null,
       "deuces": null,
-      "threes": null,
+      "threes": 6,
       "fours": 8,
       "fives": 5,
-      "sixes": 12,
-      "choice": 14,
-      "fourKind": null,
-      "fullHouse": null,
-      "smallStraight": null,
-      "largeStraight": null,
-      "yacht": null
-     },
-     "zxcv": {
-      "aces": null,
-      "deuces": 4,
-      "threes": null,
-      "fours": 4,
-      "fives": 5,
-      "sixes": 18,
+      "sixes": 6,
+      "subtotal": 25,
       "choice": 19,
       "fourKind": null,
       "fullHouse": null,
       "smallStraight": null,
       "largeStraight": null,
-      "yacht": null
+      "yacht": null,
+      "total": 44
+     },
+     "jb2": {
+      "aces": 2,
+      "deuces": null,
+      "threes": null,
+      "fours": 8,
+      "fives": 5,
+      "sixes": 12,
+      "subtotal": 27,
+      "choice": 16,
+      "fourKind": null,
+      "fullHouse": null,
+      "smallStraight": null,
+      "largeStraight": null,
+      "yacht": null,
+      "total": 43
      }
     }
    },
@@ -543,43 +645,47 @@
   {
    "state": {
     "turn": 6,
-    "player": "zxcv",
+    "player": "jb2",
     "trial": 1,
     "dices": [
+     6,
      4,
-     2,
-     4,
+     5,
      4,
      5
     ],
     "scoreBoard": {
-     "asdf": {
+     "jb": {
       "aces": null,
       "deuces": 2,
-      "threes": null,
+      "threes": 6,
       "fours": 8,
       "fives": 5,
-      "sixes": 12,
-      "choice": 14,
-      "fourKind": null,
-      "fullHouse": null,
-      "smallStraight": null,
-      "largeStraight": null,
-      "yacht": null
-     },
-     "zxcv": {
-      "aces": null,
-      "deuces": 4,
-      "threes": null,
-      "fours": 4,
-      "fives": 5,
-      "sixes": 18,
+      "sixes": 6,
+      "subtotal": 27,
       "choice": 19,
       "fourKind": null,
       "fullHouse": null,
       "smallStraight": null,
       "largeStraight": null,
-      "yacht": null
+      "yacht": null,
+      "total": 46
+     },
+     "jb2": {
+      "aces": 2,
+      "deuces": null,
+      "threes": null,
+      "fours": 8,
+      "fives": 5,
+      "sixes": 12,
+      "subtotal": 27,
+      "choice": 16,
+      "fourKind": null,
+      "fullHouse": null,
+      "smallStraight": null,
+      "largeStraight": null,
+      "yacht": null,
+      "total": 43
      }
     }
    },
@@ -596,44 +702,48 @@
   },
   {
    "state": {
-    "turn": 6,
-    "player": "asdf",
+    "turn": 7,
+    "player": "jb",
     "trial": 1,
     "dices": [
-     2,
      3,
-     1,
+     6,
      2,
-     6
+     6,
+     4
     ],
     "scoreBoard": {
-     "asdf": {
+     "jb": {
       "aces": null,
       "deuces": 2,
-      "threes": null,
+      "threes": 6,
       "fours": 8,
       "fives": 5,
-      "sixes": 12,
-      "choice": 14,
+      "sixes": 6,
+      "subtotal": 27,
+      "choice": 19,
       "fourKind": null,
       "fullHouse": null,
       "smallStraight": null,
       "largeStraight": null,
-      "yacht": null
+      "yacht": null,
+      "total": 46
      },
-     "zxcv": {
-      "aces": null,
-      "deuces": 4,
+     "jb2": {
+      "aces": 2,
+      "deuces": null,
       "threes": null,
-      "fours": 4,
+      "fours": 8,
       "fives": 5,
-      "sixes": 18,
-      "choice": 19,
+      "sixes": 12,
+      "subtotal": 27,
+      "choice": 16,
       "fourKind": null,
-      "fullHouse": 19,
+      "fullHouse": 0,
       "smallStraight": null,
       "largeStraight": null,
-      "yacht": null
+      "yacht": null,
+      "total": 43
      }
     }
    },
@@ -645,49 +755,111 @@
      3,
      4
     ],
-    "choice": "threes"
+    "choice": "fullHouse"
    }
   },
   {
    "state": {
     "turn": 7,
-    "player": "zxcv",
+    "player": "jb2",
     "trial": 1,
     "dices": [
-     6,
-     1,
      4,
-     1,
-     5
+     2,
+     6,
+     2,
+     2
     ],
     "scoreBoard": {
-     "asdf": {
+     "jb": {
       "aces": null,
       "deuces": 2,
-      "threes": 3,
+      "threes": 6,
+      "fours": 8,
+      "fives": 5,
+      "sixes": 6,
+      "subtotal": 27,
+      "choice": 19,
+      "fourKind": null,
+      "fullHouse": 0,
+      "smallStraight": null,
+      "largeStraight": null,
+      "yacht": null,
+      "total": 46
+     },
+     "jb2": {
+      "aces": 2,
+      "deuces": null,
+      "threes": null,
       "fours": 8,
       "fives": 5,
       "sixes": 12,
-      "choice": 14,
+      "subtotal": 27,
+      "choice": 16,
       "fourKind": null,
-      "fullHouse": null,
+      "fullHouse": 0,
       "smallStraight": null,
       "largeStraight": null,
-      "yacht": null
-     },
-     "zxcv": {
+      "yacht": null,
+      "total": 43
+     }
+    }
+   },
+   "decision": {
+    "keep": [
+     0,
+     1,
+     2,
+     3,
+     4
+    ],
+    "choice": "deuces"
+   }
+  },
+  {
+   "state": {
+    "turn": 8,
+    "player": "jb",
+    "trial": 1,
+    "dices": [
+     1,
+     3,
+     4,
+     3,
+     3
+    ],
+    "scoreBoard": {
+     "jb": {
       "aces": null,
-      "deuces": 4,
-      "threes": null,
-      "fours": 4,
+      "deuces": 2,
+      "threes": 6,
+      "fours": 8,
       "fives": 5,
-      "sixes": 18,
+      "sixes": 6,
+      "subtotal": 27,
       "choice": 19,
       "fourKind": null,
-      "fullHouse": 19,
+      "fullHouse": 0,
       "smallStraight": null,
       "largeStraight": null,
-      "yacht": null
+      "yacht": null,
+      "total": 46
+     },
+     "jb2": {
+      "aces": 2,
+      "deuces": 6,
+      "threes": null,
+      "fours": 8,
+      "fives": 5,
+      "sixes": 12,
+      "subtotal": 33,
+      "choice": 16,
+      "fourKind": null,
+      "fullHouse": 0,
+      "smallStraight": null,
+      "largeStraight": null,
+      "yacht": null,
+      "total": 49
      }
     }
    },
@@ -704,44 +876,48 @@
   },
   {
    "state": {
-    "turn": 7,
-    "player": "asdf",
+    "turn": 8,
+    "player": "jb2",
     "trial": 1,
     "dices": [
+     1,
      3,
-     6,
      3,
-     6,
+     3,
      3
     ],
     "scoreBoard": {
-     "asdf": {
-      "aces": null,
+     "jb": {
+      "aces": 1,
       "deuces": 2,
-      "threes": 3,
+      "threes": 6,
+      "fours": 8,
+      "fives": 5,
+      "sixes": 6,
+      "subtotal": 28,
+      "choice": 19,
+      "fourKind": null,
+      "fullHouse": 0,
+      "smallStraight": null,
+      "largeStraight": null,
+      "yacht": null,
+      "total": 47
+     },
+     "jb2": {
+      "aces": 2,
+      "deuces": 6,
+      "threes": null,
       "fours": 8,
       "fives": 5,
       "sixes": 12,
-      "choice": 14,
+      "subtotal": 33,
+      "choice": 16,
       "fourKind": null,
-      "fullHouse": null,
+      "fullHouse": 0,
       "smallStraight": null,
       "largeStraight": null,
-      "yacht": null
-     },
-     "zxcv": {
-      "aces": 2,
-      "deuces": 4,
-      "threes": null,
-      "fours": 4,
-      "fives": 5,
-      "sixes": 18,
-      "choice": 19,
-      "fourKind": null,
-      "fullHouse": 19,
-      "smallStraight": null,
-      "largeStraight": null,
-      "yacht": null
+      "yacht": null,
+      "total": 49
      }
     }
    },
@@ -753,49 +929,111 @@
      3,
      4
     ],
-    "choice": "fullHouse"
+    "choice": "fourKind"
    }
   },
   {
    "state": {
-    "turn": 8,
-    "player": "zxcv",
+    "turn": 9,
+    "player": "jb",
     "trial": 1,
     "dices": [
-     2,
-     1,
+     6,
+     6,
+     6,
      3,
-     3,
-     4
+     6
     ],
     "scoreBoard": {
-     "asdf": {
-      "aces": null,
+     "jb": {
+      "aces": 1,
       "deuces": 2,
-      "threes": 3,
+      "threes": 6,
+      "fours": 8,
+      "fives": 5,
+      "sixes": 6,
+      "subtotal": 28,
+      "choice": 19,
+      "fourKind": null,
+      "fullHouse": 0,
+      "smallStraight": null,
+      "largeStraight": null,
+      "yacht": null,
+      "total": 47
+     },
+     "jb2": {
+      "aces": 2,
+      "deuces": 6,
+      "threes": null,
       "fours": 8,
       "fives": 5,
       "sixes": 12,
-      "choice": 14,
-      "fourKind": null,
-      "fullHouse": 21,
+      "subtotal": 33,
+      "choice": 16,
+      "fourKind": 13,
+      "fullHouse": 0,
       "smallStraight": null,
       "largeStraight": null,
-      "yacht": null
-     },
-     "zxcv": {
-      "aces": 2,
-      "deuces": 4,
-      "threes": null,
-      "fours": 4,
+      "yacht": null,
+      "total": 62
+     }
+    }
+   },
+   "decision": {
+    "keep": [
+     0,
+     1,
+     2,
+     3,
+     4
+    ],
+    "choice": "fourKind"
+   }
+  },
+  {
+   "state": {
+    "turn": 9,
+    "player": "jb2",
+    "trial": 1,
+    "dices": [
+     6,
+     4,
+     3,
+     5,
+     1
+    ],
+    "scoreBoard": {
+     "jb": {
+      "aces": 1,
+      "deuces": 2,
+      "threes": 6,
+      "fours": 8,
       "fives": 5,
-      "sixes": 18,
+      "sixes": 6,
+      "subtotal": 28,
       "choice": 19,
-      "fourKind": null,
-      "fullHouse": 19,
+      "fourKind": 27,
+      "fullHouse": 0,
       "smallStraight": null,
       "largeStraight": null,
-      "yacht": null
+      "yacht": null,
+      "total": 74
+     },
+     "jb2": {
+      "aces": 2,
+      "deuces": 6,
+      "threes": null,
+      "fours": 8,
+      "fives": 5,
+      "sixes": 12,
+      "subtotal": 33,
+      "choice": 16,
+      "fourKind": 13,
+      "fullHouse": 0,
+      "smallStraight": null,
+      "largeStraight": null,
+      "yacht": null,
+      "total": 62
      }
     }
    },
@@ -812,152 +1050,48 @@
   },
   {
    "state": {
-    "turn": 8,
-    "player": "asdf",
+    "turn": 10,
+    "player": "jb",
     "trial": 1,
     "dices": [
-     1,
-     2,
+     5,
+     4,
      2,
      5,
-     3
-    ],
-    "scoreBoard": {
-     "asdf": {
-      "aces": null,
-      "deuces": 2,
-      "threes": 3,
-      "fours": 8,
-      "fives": 5,
-      "sixes": 12,
-      "choice": 14,
-      "fourKind": null,
-      "fullHouse": 21,
-      "smallStraight": null,
-      "largeStraight": null,
-      "yacht": null
-     },
-     "zxcv": {
-      "aces": 2,
-      "deuces": 4,
-      "threes": 6,
-      "fours": 4,
-      "fives": 5,
-      "sixes": 18,
-      "choice": 19,
-      "fourKind": null,
-      "fullHouse": 19,
-      "smallStraight": null,
-      "largeStraight": null,
-      "yacht": null
-     }
-    }
-   },
-   "decision": {
-    "keep": [
-     0,
-     1,
-     2,
-     3,
      4
     ],
-    "choice": "aces"
-   }
-  },
-  {
-   "state": {
-    "turn": 9,
-    "player": "zxcv",
-    "trial": 1,
-    "dices": [
-     4,
-     4,
-     2,
-     2,
-     6
-    ],
     "scoreBoard": {
-     "asdf": {
+     "jb": {
       "aces": 1,
       "deuces": 2,
+      "threes": 6,
+      "fours": 8,
+      "fives": 5,
+      "sixes": 6,
+      "subtotal": 28,
+      "choice": 19,
+      "fourKind": 27,
+      "fullHouse": 0,
+      "smallStraight": null,
+      "largeStraight": null,
+      "yacht": null,
+      "total": 74
+     },
+     "jb2": {
+      "aces": 2,
+      "deuces": 6,
       "threes": 3,
       "fours": 8,
       "fives": 5,
       "sixes": 12,
-      "choice": 14,
-      "fourKind": null,
-      "fullHouse": 21,
+      "subtotal": 36,
+      "choice": 16,
+      "fourKind": 13,
+      "fullHouse": 0,
       "smallStraight": null,
       "largeStraight": null,
-      "yacht": null
-     },
-     "zxcv": {
-      "aces": 2,
-      "deuces": 4,
-      "threes": 6,
-      "fours": 4,
-      "fives": 5,
-      "sixes": 18,
-      "choice": 19,
-      "fourKind": null,
-      "fullHouse": 19,
-      "smallStraight": null,
-      "largeStraight": null,
-      "yacht": null
-     }
-    }
-   },
-   "decision": {
-    "keep": [
-     0,
-     1,
-     2,
-     3,
-     4
-    ],
-    "choice": "largeStraight"
-   }
-  },
-  {
-   "state": {
-    "turn": 9,
-    "player": "asdf",
-    "trial": 1,
-    "dices": [
-     2,
-     6,
-     6,
-     6,
-     5
-    ],
-    "scoreBoard": {
-     "asdf": {
-      "aces": 1,
-      "deuces": 2,
-      "threes": 3,
-      "fours": 8,
-      "fives": 5,
-      "sixes": 12,
-      "choice": 14,
-      "fourKind": null,
-      "fullHouse": 21,
-      "smallStraight": null,
-      "largeStraight": null,
-      "yacht": null
-     },
-     "zxcv": {
-      "aces": 2,
-      "deuces": 4,
-      "threes": 6,
-      "fours": 4,
-      "fives": 5,
-      "sixes": 18,
-      "choice": 19,
-      "fourKind": null,
-      "fullHouse": 19,
-      "smallStraight": null,
-      "largeStraight": 0,
-      "yacht": null
+      "yacht": null,
+      "total": 65
      }
     }
    },
@@ -975,97 +1109,47 @@
   {
    "state": {
     "turn": 10,
-    "player": "zxcv",
+    "player": "jb2",
     "trial": 1,
     "dices": [
      3,
-     5,
-     1,
-     2,
-     1
-    ],
-    "scoreBoard": {
-     "asdf": {
-      "aces": 1,
-      "deuces": 2,
-      "threes": 3,
-      "fours": 8,
-      "fives": 5,
-      "sixes": 12,
-      "choice": 14,
-      "fourKind": null,
-      "fullHouse": 21,
-      "smallStraight": null,
-      "largeStraight": 0,
-      "yacht": null
-     },
-     "zxcv": {
-      "aces": 2,
-      "deuces": 4,
-      "threes": 6,
-      "fours": 4,
-      "fives": 5,
-      "sixes": 18,
-      "choice": 19,
-      "fourKind": null,
-      "fullHouse": 19,
-      "smallStraight": null,
-      "largeStraight": 0,
-      "yacht": null
-     }
-    }
-   },
-   "decision": {
-    "keep": [
-     0,
-     1,
-     2,
-     3,
-     4
-    ],
-    "choice": "smallStraight"
-   }
-  },
-  {
-   "state": {
-    "turn": 10,
-    "player": "asdf",
-    "trial": 1,
-    "dices": [
-     2,
      1,
      4,
-     2,
-     3
+     5,
+     2
     ],
     "scoreBoard": {
-     "asdf": {
+     "jb": {
       "aces": 1,
       "deuces": 2,
+      "threes": 6,
+      "fours": 8,
+      "fives": 5,
+      "sixes": 6,
+      "subtotal": 28,
+      "choice": 19,
+      "fourKind": 27,
+      "fullHouse": 0,
+      "smallStraight": null,
+      "largeStraight": 0,
+      "yacht": null,
+      "total": 74
+     },
+     "jb2": {
+      "aces": 2,
+      "deuces": 6,
       "threes": 3,
       "fours": 8,
       "fives": 5,
       "sixes": 12,
-      "choice": 14,
-      "fourKind": null,
-      "fullHouse": 21,
+      "subtotal": 36,
+      "choice": 16,
+      "fourKind": 13,
+      "fullHouse": 0,
       "smallStraight": null,
-      "largeStraight": 0,
-      "yacht": null
-     },
-     "zxcv": {
-      "aces": 2,
-      "deuces": 4,
-      "threes": 6,
-      "fours": 4,
-      "fives": 5,
-      "sixes": 18,
-      "choice": 19,
-      "fourKind": null,
-      "fullHouse": 19,
-      "smallStraight": 0,
-      "largeStraight": 0,
-      "yacht": null
+      "largeStraight": null,
+      "yacht": null,
+      "total": 65
      }
     }
    },
@@ -1083,43 +1167,47 @@
   {
    "state": {
     "turn": 11,
-    "player": "zxcv",
+    "player": "jb",
     "trial": 1,
     "dices": [
-     4,
+     2,
      2,
      4,
      6,
-     6
+     1
     ],
     "scoreBoard": {
-     "asdf": {
+     "jb": {
       "aces": 1,
       "deuces": 2,
+      "threes": 6,
+      "fours": 8,
+      "fives": 5,
+      "sixes": 6,
+      "subtotal": 28,
+      "choice": 19,
+      "fourKind": 27,
+      "fullHouse": 0,
+      "smallStraight": null,
+      "largeStraight": 0,
+      "yacht": null,
+      "total": 74
+     },
+     "jb2": {
+      "aces": 2,
+      "deuces": 6,
       "threes": 3,
       "fours": 8,
       "fives": 5,
       "sixes": 12,
-      "choice": 14,
-      "fourKind": null,
-      "fullHouse": 21,
-      "smallStraight": 0,
-      "largeStraight": 0,
-      "yacht": null
-     },
-     "zxcv": {
-      "aces": 2,
-      "deuces": 4,
-      "threes": 6,
-      "fours": 4,
-      "fives": 5,
-      "sixes": 18,
-      "choice": 19,
-      "fourKind": null,
-      "fullHouse": 19,
-      "smallStraight": 0,
-      "largeStraight": 0,
-      "yacht": null
+      "subtotal": 36,
+      "choice": 16,
+      "fourKind": 13,
+      "fullHouse": 0,
+      "smallStraight": 15,
+      "largeStraight": null,
+      "yacht": null,
+      "total": 80
      }
     }
    },
@@ -1131,49 +1219,111 @@
      3,
      4
     ],
-    "choice": "yacht"
+    "choice": "smallStraight"
    }
   },
   {
    "state": {
     "turn": 11,
-    "player": "asdf",
+    "player": "jb2",
     "trial": 1,
     "dices": [
-     3,
+     5,
      5,
      2,
-     1,
+     6,
      5
     ],
     "scoreBoard": {
-     "asdf": {
+     "jb": {
       "aces": 1,
       "deuces": 2,
+      "threes": 6,
+      "fours": 8,
+      "fives": 5,
+      "sixes": 6,
+      "subtotal": 28,
+      "choice": 19,
+      "fourKind": 27,
+      "fullHouse": 0,
+      "smallStraight": 0,
+      "largeStraight": 0,
+      "yacht": null,
+      "total": 74
+     },
+     "jb2": {
+      "aces": 2,
+      "deuces": 6,
       "threes": 3,
       "fours": 8,
       "fives": 5,
       "sixes": 12,
-      "choice": 14,
-      "fourKind": null,
-      "fullHouse": 21,
-      "smallStraight": 0,
-      "largeStraight": 0,
-      "yacht": null
-     },
-     "zxcv": {
-      "aces": 2,
-      "deuces": 4,
+      "subtotal": 36,
+      "choice": 16,
+      "fourKind": 13,
+      "fullHouse": 0,
+      "smallStraight": 15,
+      "largeStraight": null,
+      "yacht": null,
+      "total": 80
+     }
+    }
+   },
+   "decision": {
+    "keep": [
+     0,
+     1,
+     2,
+     3,
+     4
+    ],
+    "choice": "largeStraight"
+   }
+  },
+  {
+   "state": {
+    "turn": 12,
+    "player": "jb",
+    "trial": 1,
+    "dices": [
+     3,
+     4,
+     4,
+     3,
+     2
+    ],
+    "scoreBoard": {
+     "jb": {
+      "aces": 1,
+      "deuces": 2,
       "threes": 6,
-      "fours": 4,
+      "fours": 8,
       "fives": 5,
-      "sixes": 18,
+      "sixes": 6,
+      "subtotal": 28,
       "choice": 19,
-      "fourKind": null,
-      "fullHouse": 19,
+      "fourKind": 27,
+      "fullHouse": 0,
       "smallStraight": 0,
       "largeStraight": 0,
-      "yacht": 0
+      "yacht": null,
+      "total": 74
+     },
+     "jb2": {
+      "aces": 2,
+      "deuces": 6,
+      "threes": 3,
+      "fours": 8,
+      "fives": 5,
+      "sixes": 12,
+      "subtotal": 36,
+      "choice": 16,
+      "fourKind": 13,
+      "fullHouse": 0,
+      "smallStraight": 15,
+      "largeStraight": 0,
+      "yacht": null,
+      "total": 80
      }
     }
    },
@@ -1191,97 +1341,47 @@
   {
    "state": {
     "turn": 12,
-    "player": "zxcv",
-    "trial": 1,
-    "dices": [
-     1,
-     2,
-     2,
-     3,
-     1
-    ],
-    "scoreBoard": {
-     "asdf": {
-      "aces": 1,
-      "deuces": 2,
-      "threes": 3,
-      "fours": 8,
-      "fives": 5,
-      "sixes": 12,
-      "choice": 14,
-      "fourKind": null,
-      "fullHouse": 21,
-      "smallStraight": 0,
-      "largeStraight": 0,
-      "yacht": 0
-     },
-     "zxcv": {
-      "aces": 2,
-      "deuces": 4,
-      "threes": 6,
-      "fours": 4,
-      "fives": 5,
-      "sixes": 18,
-      "choice": 19,
-      "fourKind": null,
-      "fullHouse": 19,
-      "smallStraight": 0,
-      "largeStraight": 0,
-      "yacht": 0
-     }
-    }
-   },
-   "decision": {
-    "keep": [
-     0,
-     1,
-     2,
-     3,
-     4
-    ],
-    "choice": "fourKind"
-   }
-  },
-  {
-   "state": {
-    "turn": 12,
-    "player": "asdf",
+    "player": "jb2",
     "trial": 1,
     "dices": [
      2,
+     5,
      6,
-     2,
      4,
-     1
+     5
     ],
     "scoreBoard": {
-     "asdf": {
+     "jb": {
       "aces": 1,
       "deuces": 2,
+      "threes": 6,
+      "fours": 8,
+      "fives": 5,
+      "sixes": 6,
+      "subtotal": 28,
+      "choice": 19,
+      "fourKind": 27,
+      "fullHouse": 0,
+      "smallStraight": 0,
+      "largeStraight": 0,
+      "yacht": 0,
+      "total": 74
+     },
+     "jb2": {
+      "aces": 2,
+      "deuces": 6,
       "threes": 3,
       "fours": 8,
       "fives": 5,
       "sixes": 12,
-      "choice": 14,
-      "fourKind": null,
-      "fullHouse": 21,
-      "smallStraight": 0,
+      "subtotal": 36,
+      "choice": 16,
+      "fourKind": 13,
+      "fullHouse": 0,
+      "smallStraight": 15,
       "largeStraight": 0,
-      "yacht": 0
-     },
-     "zxcv": {
-      "aces": 2,
-      "deuces": 4,
-      "threes": 6,
-      "fours": 4,
-      "fives": 5,
-      "sixes": 18,
-      "choice": 19,
-      "fourKind": 0,
-      "fullHouse": 19,
-      "smallStraight": 0,
-      "largeStraight": 0,
-      "yacht": 0
+      "yacht": null,
+      "total": 80
      }
     }
    },
@@ -1293,7 +1393,7 @@
      3,
      4
     ],
-    "choice": "fourKind"
+    "choice": "yacht"
    }
   }
  ],
@@ -1306,33 +1406,37 @@
    0
   ],
   "scoreBoard": {
-   "asdf": {
+   "jb": {
     "aces": 1,
     "deuces": 2,
+    "threes": 6,
+    "fours": 8,
+    "fives": 5,
+    "sixes": 6,
+    "subtotal": 28,
+    "choice": 19,
+    "fourKind": 27,
+    "fullHouse": 0,
+    "smallStraight": 0,
+    "largeStraight": 0,
+    "yacht": 0,
+    "total": 74
+   },
+   "jb2": {
+    "aces": 2,
+    "deuces": 6,
     "threes": 3,
     "fours": 8,
     "fives": 5,
     "sixes": 12,
-    "choice": 14,
-    "fourKind": 0,
-    "fullHouse": 21,
-    "smallStraight": 0,
+    "subtotal": 36,
+    "choice": 16,
+    "fourKind": 13,
+    "fullHouse": 0,
+    "smallStraight": 15,
     "largeStraight": 0,
-    "yacht": 0
-   },
-   "zxcv": {
-    "aces": 2,
-    "deuces": 4,
-    "threes": 6,
-    "fours": 4,
-    "fives": 5,
-    "sixes": 18,
-    "choice": 19,
-    "fourKind": 0,
-    "fullHouse": 19,
-    "smallStraight": 0,
-    "largeStraight": 0,
-    "yacht": 0
+    "yacht": 0,
+    "total": 80
    }
   }
  }

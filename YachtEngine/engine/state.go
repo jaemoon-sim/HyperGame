@@ -36,6 +36,7 @@ type LogStateElem struct {
 }
 
 type LogState struct {
-	Log    []LogStateElem `json:"log"`
-	Result InnerState     `json:"final"`
+	Players []string       `json:"players"`
+	Log     []LogStateElem `json:"log"`
+	Result  InnerState     `json:"final"`
 }

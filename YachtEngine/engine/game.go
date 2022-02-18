@@ -41,7 +41,11 @@ type Game struct {
 }
 
 func (g *Game) Play() {
-	logState := &LogState{}
+	playerIDs := []string{}
+	for _, player := range g.Players {
+		playerIDs = append(playerIDs, player.ID)
+	}
+	logState := &LogState{Players: playerIDs}
 
 	for round := 1; round <= 12; round++ {
 		for _, player := range g.Players {
