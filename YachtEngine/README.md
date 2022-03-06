@@ -22,6 +22,9 @@ go build --o yachtengine main.go
 |`log > state`|player의 decision이 발생하기 직전의 state
 |`log > decision`| `log > state`에 대한 player의 decision
 |`final`| 다 끝난 뒤 게임 state|
+|`final > winner` | 승리한 사람 목록(무승부 가능성이 있어서 array)
+|`final > foulBy` | error를 발생시킨 사람의 id
+|`final > foulDetail` | error내용
 
 ```
 {
@@ -1467,4 +1470,56 @@ go build --o yachtengine main.go
   }
  }
 }
+```
+
+#### foul 있는 경우 final 예시
+```json
+ "final": {
+  "winner": [
+   "jm2"
+  ],
+  "dices": [
+   0,
+   0,
+   0,
+   0,
+   0
+  ],
+  "scoreBoard": {
+   "jm": {
+    "aces": null,
+    "deuces": null,
+    "threes": null,
+    "fours": null,
+    "fives": null,
+    "sixes": null,
+    "subtotal": 0,
+    "choice": null,
+    "fourKind": null,
+    "fullHouse": null,
+    "smallStraight": null,
+    "largeStraight": null,
+    "yacht": null,
+    "total": 0
+   },
+   "jm2": {
+    "aces": null,
+    "deuces": null,
+    "threes": null,
+    "fours": null,
+    "fives": null,
+    "sixes": null,
+    "subtotal": 0,
+    "choice": null,
+    "fourKind": null,
+    "fullHouse": null,
+    "smallStraight": null,
+    "largeStraight": null,
+    "yacht": null,
+    "total": 0
+   }
+  },
+  "foulBy": "jm",
+  "foulDetail": "no choice"
+ }
 ```
