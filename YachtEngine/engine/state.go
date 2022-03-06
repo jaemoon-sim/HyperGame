@@ -4,12 +4,15 @@ type State struct {
 	*InnerState `json:"state"`
 }
 type InnerState struct {
-	Winner     string                      `json:"winner,omitempty"`
+	Winner     []string                    `json:"winner,omitempty"`
 	Turn       int                         `json:"turn,omitempty"`
 	Player     string                      `json:"player,omitempty"`
 	Trial      int                         `json:"trial,omitempty"`
 	Dices      [5]int                      `json:"dices"`
 	ScoreBoard map[string]ScoreBoardResult `json:"scoreBoard"`
+
+	FoulBy     string `json:"foulBy,omitempty"`
+	FoulDetail string `json:"foulDetail,omitempty"`
 }
 
 func createState(g *Game, round, trial int, p *Player, diceSet *DiceSet) *State {

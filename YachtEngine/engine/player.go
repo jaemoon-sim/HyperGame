@@ -36,24 +36,27 @@ func (d Decision) keepDices(diceSet *DiceSet) {
 	}
 }
 
-func (p *Player) Play(state *State, diceSet *DiceSet) (decision Decision, nextTrial bool) {
-	decision = p.GetDecision(state)
-	if decision.InnerDecision.ScoreTitle != nil {
+func (p *Player) Play(state *State, diceSet *DiceSet) (decision Decision, nextTrial bool, err error) {
+	decision, err = p.GetDecision(state)
+	if err != nil {
+		return Decision{}, nextTrial, err
+	}
+	if decision.InnerDecision.ScoreTitle != nil && *decision.InnerDecision.ScoreTitle != "" {
 		err := p.ScoreBoard.SetScore(*decision.InnerDecision.ScoreTitle, diceSet)
 		if err != nil {
-			log.Fatalf("player(%s) invalid score title %s: %v\n", p.ID, *decision.InnerDecision.ScoreTitle, err)
+			return Decision{}, false, fmt.Errorf("invalid score title %s: %w", *decision.InnerDecision.ScoreTitle, err)
 		}
-		return decision, false
+		return decision, false, nil
 	}
 	if state.Trial == 3 {
-		log.Fatalf("player(%s) invalid score title", p.ID)
+		return Decision{}, false, fmt.Errorf("no choice")
 	}
 	decision.keepDices(diceSet)
 
-	return decision, true
+	return decision, true, nil
 }
 
-func (p *Player) GetDecision(state *State) Decision {
+func (p *Player) GetDecision(state *State) (Decision, error) {
 	b, err := json.Marshal(state)
 	if err != nil {
 		log.Fatalf("failed to marshal state")
@@ -75,7 +78,7 @@ func (p *Player) GetDecision(state *State) Decision {
 	decision := Decision{}
 	if err := json.Unmarshal(respBody, &decision); err != nil {
 		log.Printf("%s\n", string(respBody))
-		log.Fatalf("failed to parse response from player(%s): %v", p.ID, err)
+		return Decision{}, fmt.Errorf("invalid decision json")
 	}
-	return decision
+	return decision, nil
 }

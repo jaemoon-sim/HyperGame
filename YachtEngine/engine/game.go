@@ -46,6 +46,7 @@ func (g *Game) Play() {
 		playerIDs = append(playerIDs, player.ID)
 	}
 	logState := &LogState{Players: playerIDs}
+	defer g.PrintLog(logState)
 
 	for round := 1; round <= 12; round++ {
 		for _, player := range g.Players {
@@ -54,7 +55,21 @@ func (g *Game) Play() {
 				diceSet.Roll()
 				state := createState(g, round, trial, player, diceSet)
 
-				decision, next := player.Play(state, diceSet)
+				decision, next, err := player.Play(state, diceSet)
+				if err != nil {
+					log.Printf("err %v\n", err)
+					logState.Result = *createState(g, 0, 0, nil, nil).InnerState
+					logState.Result.FoulBy = player.ID
+					logState.Result.FoulDetail = fmt.Sprintf("%v", err)
+					logState.Result.Winner = []string{}
+					for _, p := range g.Players {
+						if p.ID == player.ID {
+							continue
+						}
+						logState.Result.Winner = append(logState.Result.Winner, p.ID)
+					}
+					return
+				}
 
 				logState.Log = append(logState.Log, LogStateElem{*state.InnerState, decision.InnerDecision})
 				if !next {
@@ -65,8 +80,21 @@ func (g *Game) Play() {
 	}
 
 	logState.Result = *createState(g, 0, 0, nil, nil).InnerState
+	logState.Result.Winner = calculateWinner(logState.Result)
+}
 
-	g.PrintLog(logState)
+func calculateWinner(innerState InnerState) []string {
+	maxScore := -1
+	winner := []string{}
+	for playerID, scoreboard := range innerState.ScoreBoard {
+		if *scoreboard.Total > maxScore {
+			winner = []string{playerID}
+			maxScore = *scoreboard.Total
+		} else if *scoreboard.Total == maxScore {
+			winner = append(winner, playerID)
+		}
+	}
+	return winner
 }
 
 func (g *Game) PrintLog(logState *LogState) {
