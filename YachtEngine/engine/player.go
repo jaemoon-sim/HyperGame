@@ -39,13 +39,16 @@ func (d Decision) keepDices(diceSet *DiceSet) {
 func (p *Player) Play(state *State, diceSet *DiceSet) (decision Decision, nextTrial bool) {
 	decision = p.GetDecision(state)
 	if decision.InnerDecision.ScoreTitle != nil {
-		decision.keepDices(diceSet)
 		err := p.ScoreBoard.SetScore(*decision.InnerDecision.ScoreTitle, diceSet)
 		if err != nil {
 			log.Fatalf("player(%s) invalid score title %s: %v\n", p.ID, *decision.InnerDecision.ScoreTitle, err)
 		}
 		return decision, false
 	}
+	if state.Trial == 3 {
+		log.Fatalf("player(%s) invalid score title", p.ID)
+	}
+	decision.keepDices(diceSet)
 
 	return decision, true
 }
@@ -71,6 +74,7 @@ func (p *Player) GetDecision(state *State) Decision {
 
 	decision := Decision{}
 	if err := json.Unmarshal(respBody, &decision); err != nil {
+		log.Printf("%s\n", string(respBody))
 		log.Fatalf("failed to parse response from player(%s): %v", p.ID, err)
 	}
 	return decision

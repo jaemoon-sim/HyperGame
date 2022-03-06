@@ -82,5 +82,4 @@ func (g *Game) PrintLog(logState *LogState) {
 		defer f.Close()
 		f.Write(b)
 	}
-
 }
