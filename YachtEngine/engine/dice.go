@@ -35,6 +35,17 @@ func (ds *DiceSet) String() string {
 	return buf.String()
 }
 
+func (ds *DiceSet) ToMap() map[int]int {
+	result := map[int]int{}
+	for _, d := range ds {
+		if _, ok := result[d.Value]; !ok {
+			result[d.Value] = 0
+		}
+		result[d.Value]++
+	}
+	return result
+}
+
 func (ds *DiceSet) ToInts() [5]int {
 	if ds == nil {
 		return [5]int{}
