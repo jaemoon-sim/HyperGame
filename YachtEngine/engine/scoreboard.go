@@ -245,12 +245,13 @@ func (s *ScoreBoard) calculateSmallStraight(dices *DiceSet) *int {
 }
 
 func (s *ScoreBoard) calculateLargeStraight(dices *DiceSet) *int {
-	str := dices.String()
+	diceMap := dices.ToMap()
 	score := 0
-	if strings.Contains(str, "12345") ||
-		strings.Contains(str, "23456") {
+	if (diceMap[1] > 0 && diceMap[2] > 0 && diceMap[3] > 0 && diceMap[4] > 0 && diceMap[5] > 0) ||
+		(diceMap[2] > 0 && diceMap[3] > 0 && diceMap[4] > 0 && diceMap[5] > 0 && diceMap[6] > 0) {
 		score = 30
 	}
+
 	return &score
 }
 
