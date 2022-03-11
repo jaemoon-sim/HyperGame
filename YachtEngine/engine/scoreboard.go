@@ -236,16 +236,19 @@ func (s *ScoreBoard) calculateFourOfAKind(dices *DiceSet) *int {
 func (s *ScoreBoard) calculateSmallStraight(dices *DiceSet) *int {
 	diceMap := dices.ToMap()
 	score := 0
-	if len(diceMap) >= 4 {
+	if (diceMap[1] > 0 && diceMap[2] > 0 && diceMap[3] > 0 && diceMap[4] > 0) ||
+		(diceMap[2] > 0 && diceMap[3] > 0 && diceMap[4] > 0 && diceMap[5] > 0) ||
+		(diceMap[3] > 0 && diceMap[4] > 0 && diceMap[5] > 0 && diceMap[6] > 0) {
 		score = 15
 	}
 	return &score
 }
 
 func (s *ScoreBoard) calculateLargeStraight(dices *DiceSet) *int {
-	diceMap := dices.ToMap()
+	str := dices.String()
 	score := 0
-	if len(diceMap) >= 5 {
+	if strings.Contains(str, "12345") ||
+		strings.Contains(str, "23456") {
 		score = 30
 	}
 	return &score
