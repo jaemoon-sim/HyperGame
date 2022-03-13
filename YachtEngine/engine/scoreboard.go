@@ -170,50 +170,23 @@ func (s *ScoreBoard) calculateChoice(dices *DiceSet) *int {
 }
 
 func (s *ScoreBoard) calculateFullHouse(dices *DiceSet) *int {
-	str := dices.String()
+	diceMap := dices.ToMap()
+	isAllLargerThanTwo := func() bool {
+		for _, num := range diceMap {
+			if num >= 2 {
+				continue
+			}
+			return false
+		}
+		return true
+	}()
+
+	isYacht := func() bool {
+		return *s.calculateYacht(dices) > 0
+	}()
+
 	score := 0
-	if (strings.Contains(str, "11") &&
-		(strings.Contains(str, "111") ||
-			strings.Contains(str, "222") ||
-			strings.Contains(str, "333") ||
-			strings.Contains(str, "444") ||
-			strings.Contains(str, "555") ||
-			strings.Contains(str, "666"))) ||
-		(strings.Contains(str, "22") &&
-			(strings.Contains(str, "111") ||
-				strings.Contains(str, "222") ||
-				strings.Contains(str, "333") ||
-				strings.Contains(str, "444") ||
-				strings.Contains(str, "555") ||
-				strings.Contains(str, "666"))) ||
-		(strings.Contains(str, "33") &&
-			(strings.Contains(str, "111") ||
-				strings.Contains(str, "222") ||
-				strings.Contains(str, "333") ||
-				strings.Contains(str, "444") ||
-				strings.Contains(str, "555") ||
-				strings.Contains(str, "666"))) ||
-		(strings.Contains(str, "44") &&
-			(strings.Contains(str, "111") ||
-				strings.Contains(str, "222") ||
-				strings.Contains(str, "333") ||
-				strings.Contains(str, "444") ||
-				strings.Contains(str, "555") ||
-				strings.Contains(str, "666"))) ||
-		(strings.Contains(str, "55") &&
-			(strings.Contains(str, "111") ||
-				strings.Contains(str, "222") ||
-				strings.Contains(str, "333") ||
-				strings.Contains(str, "444") ||
-				strings.Contains(str, "555") ||
-				strings.Contains(str, "666"))) ||
-		(strings.Contains(str, "66") &&
-			(strings.Contains(str, "111") ||
-				strings.Contains(str, "222") ||
-				strings.Contains(str, "333") ||
-				strings.Contains(str, "444") ||
-				strings.Contains(str, "555") ||
-				strings.Contains(str, "666"))) {
+	if isYacht || (len(diceMap) == 2 && isAllLargerThanTwo) {
 		score = *s.calculateChoice(dices)
 	}
 	return &score
